@@ -1,0 +1,33 @@
+/*
+++
+Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+--
+*/
+
+/* App Bar ----------------------------------------------------- */
+
+	#people .dockPeople a {	
+		width: 102px;
+		}
+
+/* Toolbar (actions) ------------------------------------------- */
+
+	.actionJajah a {	
+		width: 98px !important;
+		background-image: url(../../../images/lang/en/actionsPeople.png);
+		}
+	.action.add_to_group a {	
+		width: 106px !important;
+		background-image: url(../../../images/lang/en/actionsPeople.png);
+		}
+	.action.remove_from_group a {	
+		width: 139px !important;
+		background-image: url(../../../images/lang/en/actionsPeople.png);
+		}

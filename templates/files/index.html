@@ -1,0 +1,610 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+	<title>My Company Name Inc Connector : Files : Documents</title>
+	
+	<meta name="viewport" content="width=750; height=2000">
+	<meta name="copyright" content="Copyright 2004-2007 Joyent Inc.">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"><!-- Joyent Connecter rev. 539 -->
+	
+	<script src="../javascripts/lang/en.js" type="text/javascript"></script>
+	<script src="../javascripts/all.js" type="text/javascript"></script>
+	<script src="../javascripts/files.js" type="text/javascript"></script>
+	<link href="../stylesheets/all.css" media="screen" rel="Stylesheet" type="text/css">
+	<link href="../stylesheets/joyent.css" media="screen" rel="Stylesheet" type="text/css">
+	<link href="../stylesheets/files.css" media="screen" rel="Stylesheet" type="text/css">
+	<link href="../stylesheets/lang/en/en-files.css" media="screen" rel="Stylesheet" type="text/css">
+	<link href="../stylesheets/lang/en/en.css" media="screen" rel="Stylesheet" type="text/css">
+	<!--[if IE 6]>
+	<link href="../stylesheets/ie6.css" media="screen" rel="Stylesheet" type="text/css" />
+	<![endif]-->
+	<!--[if IE 7]>
+	<link href="../stylesheets/ie7.css" media="screen" rel="Stylesheet" type="text/css" />
+	<![endif]-->
+
+
+	<style type="text/css">
+		#sidebars {width: 329px;}
+		#searchField {width: 265px;}
+		.sidebar {width: 266px;}
+		#contentPane {left: 329px;}
+		#Toolbar {left: 329px;}
+		#Toolbar {width: expression((document.body.clientWidth - 329) + "px");}
+		#contentPane {width: expression((document.body.clientWidth - 329) + "px");}
+		body {background-position: 300px;}
+	</style></head><body style="background-position: 299px 50%;" id="files">
+	
+
+	<ul id="Dock">
+			<li class="dockConnect">
+				 <a href="../connect/" title="Connect">Connect</a>
+			</li>
+			<li class="dockMail">
+				 <a href="../mail/" title="Mail">Mail</a>
+			</li>
+			<li class="dockCalendar">
+				 <a href="../calendar/" title="Calendar">Calendar</a>
+			</li>
+			<li class="dockPeople">
+				 <a href="../people/" title="People">People</a>
+			</li>
+			<li class="dockFiles">
+				 <a href="../files/" title="Files">Files</a>
+			</li>
+			<li class="dockBookmarks">
+				 <a href="../bookmarks/" title="Bookmarks">Bookmarks</a>
+			</li>
+			<li class="dockLists">
+				 <a href="../lists/" title="Lists">Lists</a>
+			</li>
+	</ul>
+
+		
+<div id="plusMenu">
+	<a href="#" id="plusMenuLink" class="collapsed" onclick="return MenuItems.toggle();">+</a>
+	<ul id="plusMenuContents" style="display: none;">
+		<li>
+			<div id="loggedInUser">
+				<table>
+					<tbody><tr>
+						<td style="width: 48px;">
+							<div class="userPhoto">
+															</div>
+						</td>
+						<td>
+							<h4 style="margin-left: 5px;">Jane Doe (jane)</h4>
+						</td>
+					</tr>
+				</tbody></table>
+			</div>
+		</li>
+					<li>
+				<h5>Account Switching</h5>
+			</li>
+												<li class="userShortcut">
+						<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+											 				<a href="../user/switch/193733">My Company Name Inc - john</a>
+										 			</div></div></div></div>
+					</li>
+									<li class="userShortcut selected">
+						<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+											 				<a href="#" onclick="; return false;" style="font-weight: bold; font-style: italic;">My Company Name Inc - jane</a>
+										 			</div></div></div></div>
+					</li>
+										<li class="userShortcutManage">
+				<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+					<a href="#" onclick="ModalDialog.showURL('../user/connect');; return false;">Edit…</a>
+				</div></div></div></div>
+			</li>
+				<li>
+			<h5>Utilities</h5>
+		</li>
+		<li id="yourPreferences">
+			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+					 				<a href="../person/1510069/edit#preferences" title="Edit your personal information">Your Preferences</a>
+					 		</div></div></div></div>
+		</li>
+					<li id="customerCenter">
+				<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+								 			<a href="http://customer.joyent.com/login" target="_blank" title="Go to the Joyent Customer Center">Customer Center</a>
+											</div></div></div></div>
+			</li>
+				<li id="help">
+			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+				<a href="http://forum.joyent.com/" target="_blank" title="Open the Joyent Forum in a new window">
+					Help				</a>
+			</div></div></div></div>
+		</li>
+		<li id="logout">
+			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+				<a href="../logout">Sign Out</a>
+			</div></div></div></div>
+		</li>
+	</ul>
+</div>
+	
+
+<div style="width: 328px;" id="sidebars">
+	<ul id="sidebarTabs">
+		<li style="position: relative;" id="gripperSidebarTab" class="sidebarTab">
+			<a href="#" onclick="return false;" title="Resize Sidebar">&lt;=&gt;</a>
+			<script type="text/javascript">
+//<![CDATA[
+new Draggable('gripperSidebarTab', { constraint: 'horizontal', revert: SidebarResizer.revertHandle, onDrag:SidebarResizer.refresh, onEnd:SidebarResizer.savePosition });
+//]]>
+</script>
+		 </li>
+		<li id="groupsSidebarTab" class="sidebarTab selected"><a href="#" onclick="return Sidebar.Tabs.select('groups');">Groups</a></li>
+					<li id="tagsSidebarTab" class="sidebarTab"><a href="#" onclick="return Sidebar.Tabs.select('tags');">Tags</a></li>
+			<li id="accessSidebarTab" class="sidebarTab"><a href="#" onclick="return Sidebar.Tabs.select('access');">Access</a></li>
+			<li id="notifySidebarTab" class="sidebarTab"><a href="#" onclick="return Sidebar.Tabs.select('notify');">Notify</a></li>
+			</ul>
+			
+<div id="search">
+	<form action="/connect/search" method="get" style="margin: 0pt 30px 0pt 0pt; padding: 0pt;">		<input class="textInput deselected" id="searchField" name="search_string" style="width: 264px;" autosave="com.joyent.search" results="5" tabindex="1" type="search">
+	</form>	 <script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(event){ Search.init(); });
+//]]>
+</script>
+</div>
+		
+<div style="width: 264px;" id="groupsSidebar" class="sidebar selected">
+	<h3>Your Folders</h3>
+	<div id="groupsYourInset" class="sidebarInset" style="margin-bottom: 15px;">
+		
+
+			<div class="defaultGroups groups"><ul class="groupsList">
+			
+<li>
+			<div id="editDefaultGroupHead" class="roundtl highlighted"><div class="roundtr"><div id="defaultGroupSelectedEditDivBL" class="roundbl"><div id="defaultGroupSelectedEditDivBR" class="roundbr">
+			<table><tbody><tr>
+				<td class="dinger">
+				</td>
+				<td>
+					<a href="../files/212437" class="all folder highlighted">Documents</a>
+				</td>
+				<td class="showInfo">
+					<a class="groupInfo collapsed" href="#" id="defaultGroupSelectedEditDinger" onclick="DefaultGroup.editToggle();; return false;" title="View group info">Show</a>
+				</td>
+			</tr></tbody></table>
+		</div></div></div></div>
+		<div id="editDefaultGroupDialog" class="roundbl groupInfo" style="display: none;"><div class="roundbr groupInfoMargin">
+			
+
+	<a class="groupOption access" href="#" id="standardGroupEditAccessLink" onclick="StandardGroup.toggleEditAccess();; return false;">Access</a>
+	<div id="standardGroupEditAccess" style="display: none;" class="groupOptionMenu">
+		<form action="/permissions/set_group_permissions/212437?group_type=Folder" method="post" onsubmit="return StandardGroup.editSubmit(this);">			 <input id="access_mode_public" name="access_mode" checked="checked" onclick="Effect.BlindUp('access_mode_restricted_info', { duration: Joyent.effectsDuration });" value="public" type="radio">
+			<label for="public">Public</label>
+			<br>
+			<input id="access_mode_restricted" name="access_mode" onclick="if (! $('access_mode_restricted_info').visible()) Effect.BlindDown('access_mode_restricted_info', { duration: Joyent.effectsDuration });" value="restricted" type="radio">
+			<label for="restricted">Restricted to you</label>
+			<br>
+			<div id="access_mode_restricted_info" style="margin: 4px 2px; display: none;">
+				Also allow:
+				<select name="user_ids[]" size="6" multiple="multiple" style="width: 100%;">
+											<option value="193733">John Smith</option>
+										
+				</select>
+			</div>
+			<div style="text-align: right;">
+				<input name="Submit" value="Save Permissions" type="submit">
+			</div>
+		</form>	 </div>
+
+
+	<a class="groupOption subscription" href="#" id="standardGroupEditSubscriptionsLink" onclick="StandardGroup.toggleEditSubscriptions();; return false;">Subscription</a>
+	<div id="standardGroupEditSubscriptions" style="display: none;" class="groupOptionMenu">
+		View this folder in another account:
+		<ul style="margin-top: 0.4em;">
+					 		
+				<li style="line-height: 1.6em;">
+						<input onchange="performCheckboxToggleAction(this, '../subscriptions/create?subscribable_type=Folder&user_id=193733&organization_id=149871&subscribable_id=212437' , '../subscriptions/delete');" type="checkbox"> My Company Name Inc (john)
+				</li>
+				 	</ul>
+	</div>
+
+<hr><input onchange="performCheckboxToggleAction(this, '../connect/create_report/12/212437' , '../connect/remove_report/12/212437');" type="checkbox"> Visible in your Workspace
+<hr>
+<a href="../syndicate/files/212437/rss" class="orangeBadge rss" title="Subscribe to this RSS feed">RSS</a>
+		</div></div>
+	</li>
+			
+<li>
+			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+			<table><tbody><tr>
+				<td class="dinger">
+				</td>
+				<td>
+					<a href="../files/notifications" class="folder notifications">Notifications</a>
+				</td>
+				<td class="showInfo">
+				</td>
+			</tr></tbody></table>	 
+		</div></div></div></div>
+	</li>
+			 
+
+<li>
+			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+			<table><tbody><tr>
+				<td class="dinger">
+									 </td>
+				<td>
+					<a href="../files/strongspace/193635" class="folder strongspace">Strongspace</a>
+				</td>
+				<td class="showInfo">
+					<div id="standard_group_spinner_53cda7b1b11d9ce635f0e8f26d1d756e" class="loadingSmallGrey" style="display: none;"></div>
+				</td>
+			</tr></tbody></table>	 
+		</div></div></div></div>
+				 <div id="groups_standard_group_53cda7b1b11d9ce635f0e8f26d1d756e">
+					</div>
+	</li>
+
+			
+			
+							
+
+<li>
+			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+			<table><tbody><tr>
+				<td class="dinger">
+									 </td>
+				<td>
+					<a href="../files/212759" class="folder group">Premier</a>
+				</td>
+				<td class="showInfo">
+					<div id="standard_group_spinner_212759" class="loadingSmallGrey" style="display: none;"></div>
+				</td>
+			</tr></tbody></table>	 
+		</div></div></div></div>
+				 <div id="groups_standard_group_212759">
+					</div>
+	</li>
+			
+			
+		</ul></div>
+
+		<div id="addGroup">
+			<a href="#" id="addGroupPlus" class="plus" onclick="return AddGroupWidget.toggle();" title="Add New Folder or Smart Folder">New…</a>
+			<div id="addGroupMenu" style="display: none;">
+				<a href="#" class="folder group" onclick="return AddGroupWidget.select('standard');">Folder</a>
+				<a href="#" class="folder smartGroup" onclick="return AddGroupWidget.select('smart');">Smart Folder</a>
+							<a class="folder group subscription" href="#" onclick="ModalDialog.showURL('../browser?context=subscribe&app=Files'); browser.removeBrowser(); Drawers.hideAll();; return false;">Subscription</a>
+					 	</div>
+		</div>
+		
+<div id="smartGroupNew" style="margin: 2px 0pt 0pt; display: none;"><div>
+	
+<form action="../smart_group/create" method="post" onsubmit="return SmartGroup.newSubmit(this);">
+	<div class="roundtl highlighted"><div class="roundtr">
+		<table><tbody><tr>
+			<td class="dinger">
+			</td>
+			<td>
+				<a href="#" class="smartGroup folder highlighted" onclick="return false;">
+								New Smart Folder				</a>
+			</td>
+			<td class="showInfo">
+			</td>
+		</tr></tbody></table>
+	</div></div>
+	<div class="roundbl groupInfo"><div class="roundbr groupInfoMargin">
+		Name:
+		<input id="smart_group_name" name="smart_group_name" style="width: 98%; display: block;" value="New Smart Folder" type="text">
+		<br>
+		Match All: 
+		<fieldset>
+			<legend>Tags:</legend>
+			<div id="smartGroupNewTagList"></div>
+			<a href="#" onclick="SmartGroup.newAddTag(); return false;" class="smallAdd">Add Tag</a>
+		</fieldset>
+		<fieldset>
+			<legend>Conditions:</legend>
+			<div id="smartGroupNewAttributeList"></div>
+			<a href="#" onclick="SmartGroup.newAddAttribute(); return false;" class="smallAdd">Add Condition</a>
+		</fieldset>
+		<p style="text-align: right; margin-top: 10px;">
+			<input name="smart_group_description_id" value="2" type="hidden">
+			<input value="Cancel" onclick="SmartGroup.newCancel(); return false;" type="button">
+			<input name="Submit" value="Save" type="submit">
+		</p>
+	</div></div>
+</form>
+	<script type="text/javascript">
+	//<![CDATA[
+					SmartGroup.attributeDescriptions.push(['24', 'Any Condition']);
+					SmartGroup.attributeDescriptions.push(['1', 'Filename']);
+					SmartGroup.attributeDescriptions.push(['2', 'Owner Username']);
+				SmartGroup.newContents = "\n<form action=\"../smart_group/create\" method=\"post\" onsubmit=\"return SmartGroup.newSubmit(this);\">\n	<div class=\"roundtl highlighted\"><div class=\"roundtr\">\n		<table><tr>\n			<td class=\"dinger\">\n	 		</td>\n			<td>\n				<a href=\"#\" class=\"smartGroup folder highlighted\" onclick=\"return false;\">\n								New Smart Folder				</a>\n			</td>\n	 		<td class=\"showInfo\">\n			</td>\n	 	</tr></table>\n	 </div></div>\n	<div class=\"roundbl groupInfo\"><div class=\"roundbr groupInfoMargin\">\n		Name:\n		 <input id=\"smart_group_name\" name=\"smart_group_name\" style=\"width: 98%; display: block;\" type=\"text\" value=\"New Smart Folder\" />\n		 <br />\n		 Match All: \n		<fieldset>\n	 		<legend>Tags:</legend>\n	 		<div id=\"smartGroupNewTagList\"></div>\n			<a href=\"#\" onclick=\"SmartGroup.newAddTag(); return false;\" class=\"smallAdd\">Add Tag</a>\n		</fieldset>\n		<fieldset>\n	 		<legend>Conditions:</legend>\n	 		<div id=\"smartGroupNewAttributeList\"></div>\n			<a href=\"#\" onclick=\"SmartGroup.newAddAttribute(); return false;\" class=\"smallAdd\">Add Condition</a>\n		</fieldset>\n		<p style=\"text-align: right; margin-top: 10px;\">\n			<input type=\"hidden\" name=\"smart_group_description_id\" value=\"2\" />\n			 <input type=\"button\" value=\"Cancel\" onclick=\"SmartGroup.newCancel(); return false;\" />\n			 <input type=\"submit\" name=\"Submit\" value=\"Save\" />\n		 </p>\n	 </div></div>\n</form>";
+	//]]>
+	</script>
+</div></div>
+		
+<div id="addGroupDialog" style="margin: 2px 0pt 0pt; display: none;">
+	<div>
+		<form action="/files/create_folder" method="post" onsubmit="return StandardGroup.newSubmit(this);">			<div class="roundtl highlighted"><div class="roundtr">
+				<table>
+					<tbody><tr>
+						<td class="dinger">
+						</td>
+						<td>
+							<a href="#" class="folder highlighted group" onclick="return false;">
+								New Folder							</a>
+						</td>
+						<td class="showInfo">
+						</td>
+					</tr>
+				</tbody></table>
+			</div></div>
+			<div class="roundbl groupInfo"><div class="roundbr groupInfoMargin">
+				Name:
+				<input id="group_name" name="group_name" style="width: 100%; display: block;" value="New Files Controller" type="text">
+									<input id="parent_id" name="parent_id" type="hidden">
+								<p style="text-align: right; margin-top: 10px;">
+					<input value="Cancel" onclick="StandardGroup.newCancel();" type="button">
+					<input name="Submit" value="Save" type="submit">
+				</p>
+			</div></div>
+		</form>	 </div>
+</div>
+	
+	</div>
+	<div id="groupsOthers" class="collapsiblePalette collapsed">
+		<h3><a href="#" onclick="CollapsiblePalette.toggle('groupsOthers');; return false;">Others' Folders</a></h3>
+		<div id="groupsOthersInset" class="content sidebarInset" style="display: none;">
+			
+<div id="others_groups">
+	<ul class="groupsList">
+								<li>
+				<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+					<table><tbody><tr>
+						<td class="dinger">
+							<a class="collapsed" href="#" id="dinger_user_193733" onclick="GroupsBrowser.toggleUser('193733');; return false;">+</a>						</td>
+						<td>
+							<a class="folder user" href="#" onclick="GroupsBrowser.toggleUser('193733');; return false;" style="background-color: transparent;">John Smith</a>						 </td>
+						<td id="groups_user_spinner_193733" style="display: none; width: 16px;">
+							<div class="loadingMessageSmall"></div>
+						</td>
+					</tr></tbody></table>
+				</div></div></div></div>
+				<div id="groups_user_193733">
+									</div>
+			</li>
+			</ul>
+</div>
+		</div>
+	</div>
+</div>
+			
+<div style="width: 264px;" id="tagsSidebar" class="sidebar">
+	<div id="tagsUnavailableContainer" class="sidebarInset sidebarWarning" style="display: none;">Tags unavailable</div>
+	<div id="tagsAvailableContainer">
+		<h3>Your Assigned Tags</h3>
+		<div id="tagsAssignedInset" class="sidebarInset">
+			<div id="tagsAssignedWarning" class="sidebarWarning">No tags</div>
+			<ul id="tagsAssigned" class="tagList tagsAssigned">
+			</ul>
+		</div>
+		<div id="tagsOthersContainer">
+			<h3>Others' Assigned Tags</h3>
+			<div id="tagsOthersInset" class="sidebarInset">
+				<ul id="tagsAssignedByOthers" class="tagList tagsAssignedByOthers">
+				</ul>
+			</div>
+		</div>
+		<div id="tagsUnusedContainer">
+			<h3>Add Tags</h3>
+			<div id="tagsUnusedInset" class="sidebarInset">
+				<form action="/tag/tag_item" method="post" onsubmit="if (! Sidebar.Tags.submitTypedTag(this)) return false;; new Ajax.Request('/tag/tag_item', {asynchronous:true, evalScripts:true, onComplete:function(request){JoyentPage.pendingAddTags = JoyentPage.pendingAddTags.reject(function(tag){ return tag == $F('tag_name'); });
+												Sidebar.Tags.refresh();
+												$('tag_name').enable();
+												$('tag_name').value = '';
+												$('tag_name').activate();}, parameters:Form.serialize(this)}); $('tag_name').disable();; return false;">					<input autocomplete="off" id="tag_name" name="tag_name" style="width: 97%; margin-bottom: 10px;" tabindex="10" value="" type="text">
+					<input id="tag_name_dom_ids" name="dom_ids" value="" type="hidden">
+				</form>
+				<div style="display: none;" class="autocompleteMenu" id="tag_name_auto_complete"></div>
+				<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(event){ TagAddField.init(); });
+//]]>
+</script>
+				<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(event){ new Ajax.Autocompleter('tag_name', 'tag_name_auto_complete', '/tag/auto_complete', {}); });
+//]]>
+</script>
+				<ul id="tagsUnassigned" class="tagList tagsUnassigned">
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+		
+<div style="width: 264px;" id="accessSidebar" class="sidebar">
+	<div id="accessUnavailableContainer" class="sidebarWarning sidebarInset" style="display: none;">Access unavailable</div>
+	<div id="accessAvailableContainer">
+		<table style="width: 100%;" class="userList">
+			<colgroup>
+				<col class="names" style="width: 100%;">
+			</colgroup>
+			<thead>
+				<tr>
+					<th class="names" style="text-align: left;"><span class="viewIcon">View</span>Access</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="accessAvailableInset" class="sidebarInset">
+			<table style="width: 100%;" class="userList">
+				<colgroup>
+					<col class="names" style="width: 98%;">
+					<col class="view" style="width: 16px;">
+				</colgroup>
+				<tbody id="accessSidebarUsers">
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+		
+<div style="width: 264px;" id="notifySidebar" class="sidebar">
+	<div id="notifyUnavailableContainer" class="sidebarWarning sidebarInset" style="display: none;">Notify unavailable</div>
+	<div id="notifyAvailableContainer">
+		<table style="width: 100%;" class="userList">
+			<colgroup>
+				<col class="names" style="width: 100%;">
+			</colgroup>
+			<thead>
+				<tr>
+					<th class="names" style="text-align: left;"><span class="notifyIcon">Notified</span>Notify</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="notifyAvailableInset" class="sidebarInset">
+			<table style="width: 100%;" class="userList">
+				<colgroup>
+					<col class="names" style="width: 98%;">
+					<col class="notify" style="width: 16px;">
+				</colgroup>
+				<tbody id="notifySidebarUsers">
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+		<br clear="left">
+</div>
+	
+<ul style="left: 328px;" id="Toolbar">
+			<li>
+			
+<div id="graph_container">
+	<div id="graphLabel">
+		0/2 GB Used
+	</div>
+	<div id="graph">
+		<strong class="bar" style="width: 0%;"></strong>
+	</div>
+</div></li>
+		 				 <li class="actionNew"><a href="../files/create/212437">New</a></li>
+											<li class="actionCopy"><a class="disabled" href="#" id="actionCopyLink" onclick="return Drawers.toggleBrowser('Copy'); return false;">Copy</a></li>
+								<li class="actionMove"><a class="disabled" href="#" id="actionMoveLink" onclick="return Drawers.toggleBrowser('Move'); return false;">Move</a></li>
+						 <li>
+		 <form action="../mail/compose" id="toolbarEmailForm" method="post" onsubmit="return Toolbar.emailSubmit(this);" style="display: none;" title="Email selected items as an attachment">					 			 <input id="toolbarEmailIDs" name="ids" value="" type="hidden">
+			<input id="actionEmailButton" value="Email" type="submit">
+		 </form>		 </li>
+		 <li class="actionEmail">
+			<a class="disabled" href="#" id="actionEmailLink" onclick="$('actionEmailButton').click(); return true;; return false;">Email</a>
+			</li>		
+				<li class="actionDelete">
+	<a class="disabled" href="#" id="actionDeleteLink" onclick="return Toolbar.deleteList('../files/delete');; return false;" title="Delete all selected items.">Delete</a>
+</li>
+	</ul>
+	<div style="left: 328px;" id="contentPane">
+		
+<div id="Drawers">
+						<div class="drawerContent" id="drawerCopy" style="display: none;">
+<form action="../files/copy" id="toolbarCopyForm" method="post" style="display: inline;">	<input id="toolbarCopyGroupID" name="new_group_id" value="" type="hidden">
+	<input id="toolbarCopyIDs" name="ids" value="" type="hidden">
+</form><div id="CopyBrowser" class="browser_placeholder" style="display: none;"> </div></div>
+									<div class="drawerContent" id="drawerMove" style="display: none;">
+<form action="../files/move" id="toolbarMoveForm" method="post" style="display: inline;">	<input id="toolbarMoveGroupID" name="new_group_id" value="" type="hidden">
+	<input id="toolbarMoveIDs" name="ids" value="" type="hidden">
+</form><div id="MoveBrowser" class="browser_placeholder" style="display: none;"> </div></div>
+			</div>
+		<div id="contentWrapper">
+			
+
+
+			 
+
+<div style="position: relative;" class="report">		
+	
+
+<div>
+	<ul class="reportBoxHeader">
+		<li>
+			<strong>Documents</strong>
+			•
+						<span id="paginationTotalCount">1</span>
+			files
+		</li>
+		<li class="right arrowNext">
+			
+		 </li>
+		<li class="right">
+					</li>
+		<li class="right arrowPrev">
+			
+		 </li>
+	</ul>
+</div>
+	<table id="tableList" class="tableList">
+		<colgroup>
+			<col style="width: 6%;">
+			<col style="width: 34%;">
+			<col style="width: 10%;">
+			<col style="width: 22%;">
+			<col style="width: 22%;">
+			<col style="width: 6%;">
+		</colgroup>
+		 <thead>
+			<tr>
+				<th class="checkBox"><div id="listCheckboxToggle" class="none" style="text-align: center;"><a href="#" onclick="JoyentPage.setItemCheckboxes(); return false;" title="Click to toggle your selection.">Toggle</a></div></th>
+				<th class="listedByAscending"><a href="../files/set_sort_order?sort_order=DESC&amp;sort_field=filename">Name</a></th>
+				<th class="unsorted"><a href="../files/set_sort_order?sort_order=ASC&amp;sort_field=size_in_bytes">Size</a></th>
+				<th class="unsorted"><a href="../files/set_sort_order?sort_order=ASC&amp;sort_field=updated_at">Date Modified</a></th>
+				<th class="unsorted"><a href="../files/set_sort_order?sort_order=ASC&amp;sort_field=joyent_file_type_description">File Type</a></th>
+				<th class="detailView"><span>Peek</span></th>
+			</tr>
+		</thead>
+		<tbody>
+							<tr id="joyent_file_252827_tr" itemdomid="joyent_file_252827" class="itemRow evenRow">
+					<td class="checkbox">
+						<input class="listCheckbox" id="joyent_file_252827_list_checkbox" onclick="JoyentPage.toggleItemCheckbox(this);" itemdomid="joyent_file_252827" type="checkbox">
+					</td>
+					<td>
+						<a href="../files/212437/252827" class="file pdf">UBCM_2008-04-18.pdf</a>
+					</td>
+					<td>
+						<a href="../files/212437/252827">87.7 KB</a>
+					</td>
+					<td>
+						<a href="../files/212437/252827">2 minutes ago</a>
+					</td>
+					<td>
+						<a href="../files/212437/252827">PDF Document</a>
+					</td>
+					<td id="joyent_file_252827_td_details_icon" class="details">
+						<a href="#" onclick="PeekView.toggle('joyent_file_252827', '../files/212437/252827?update_id=joyent_file_252827_td_details'); return false;">Details</a>
+					</td>
+				</tr>
+				<tr id="joyent_file_252827_tr_details" itemdomid="joyent_file_252827" style="display: none;" class="evenRow">
+					<td id="joyent_file_252827_td_details" colspan="6" class="Details"></td>
+				</tr>
+					 </tbody>
+	</table>
+</div>
+		</div>
+	</div>
+	<div id="overlay" class="overlay"></div>
+	<div id="modalDialog"><div id="lbLoadMessage"></div></div>
+	<script type="text/javascript">
+	//<![CDATA[
+		Joyent.applicationName = 'files';
+		Joyent.groupName = 'Folder';
+		Joyent.viewKind = 'list';
+		Item.create({ domId: 'joyent_file_252827', arId: '252827', arType: 'JoyentFile', userDomId: 'user_193635', selected: false, canEdit: true, canCopy: true, canMove: true, canDelete: true, mustConfirmDelete: false });
+User.create({ domId: 'user_193635', arId: 193635, personDomId: 'person_1510069', username: 'jane', fullName: 'Jane%20Doe', sortName: 'Doe%20Jane%20', current: true, selected: true });
+User.create({ domId: 'user_193733', arId: 193733, personDomId: 'person_1510167', username: 'john', fullName: 'John%20Smith', sortName: 'Smith%20John%20', current: false, selected: false });
+		Tag.create({ domId: 'tag_90217', arId: 90217, name: 'CSS' });
+Tag.create({ domId: 'tag_90231', arId: 90231, name: 'Design' });
+Tag.create({ domId: 'tag_90245', arId: 90245, name: 'Open%20Source' });
+		Event.observe(window, 'load', function(event){ JoyentPage.refresh(); });
+		Event.observe(window, 'load', function(event){ SidebarResizer.refresh(); });
+		$$('textarea').each(function(element){ new ResizingTextArea(element); });
+	//]]>
+	</script>
+</body></html>

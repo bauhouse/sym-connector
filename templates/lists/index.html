@@ -1,0 +1,781 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+	<title>My Company Name Inc Connector : Lists : Lists</title>
+	
+	<meta name="viewport" content="width=750; height=2000">
+	<meta name="copyright" content="Copyright 2004-2007 Joyent Inc.">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"><!-- Joyent Connecter rev. 539 -->
+	
+	<script src="../javascripts/lang/en.js" type="text/javascript"></script>
+	<script src="../javascripts/all.js" type="text/javascript"></script>
+	<script src="../javascripts/lists.js" type="text/javascript"></script>
+	<link href="../stylesheets/all.css" media="screen" rel="Stylesheet" type="text/css">
+	<link href="../stylesheets/joyent.css" media="screen" rel="Stylesheet" type="text/css">
+	<link href="../stylesheets/lists.css" media="screen" rel="Stylesheet" type="text/css">
+	<link href="../stylesheets/lang/en/en-lists.css" media="screen" rel="Stylesheet" type="text/css">
+	<link href="../stylesheets/lang/en/en.css" media="screen" rel="Stylesheet" type="text/css">
+	<!--[if IE 6]>
+	<link href="../stylesheets/ie6.css" media="screen" rel="Stylesheet" type="text/css" />
+	<![endif]-->
+	<!--[if IE 7]>
+	<link href="../stylesheets/ie7.css" media="screen" rel="Stylesheet" type="text/css" />
+	<![endif]-->
+
+
+	<style type="text/css">
+		#sidebars {width: 329px;}
+		#searchField {width: 265px;}
+		.sidebar {width: 266px;}
+		#contentPane {left: 329px;}
+		#Toolbar {left: 329px;}
+		#Toolbar {width: expression((document.body.clientWidth - 329) + "px");}
+		#contentPane {width: expression((document.body.clientWidth - 329) + "px");}
+		body {background-position: 300px;}
+	</style></head><body style="background-position: 299px 50%;" id="lists">
+	
+
+	<ul id="Dock">
+			<li class="dockConnect">
+				 <a href="../connect/" title="Connect">Connect</a>
+			</li>
+			<li class="dockMail">
+				 <a href="../mail/" title="Mail">Mail</a>
+			</li>
+			<li class="dockCalendar">
+				 <a href="../calendar/" title="Calendar">Calendar</a>
+			</li>
+			<li class="dockPeople">
+				 <a href="../people/" title="People">People</a>
+			</li>
+			<li class="dockFiles">
+				 <a href="../files/" title="Files">Files</a>
+			</li>
+			<li class="dockBookmarks">
+				 <a href="../bookmarks/" title="Bookmarks">Bookmarks</a>
+			</li>
+			<li class="dockLists">
+				 <a href="../lists/" title="Lists">Lists</a>
+			</li>
+	</ul>
+
+		
+<div id="plusMenu">
+	<a href="#" id="plusMenuLink" class="collapsed" onclick="return MenuItems.toggle();">+</a>
+	<ul id="plusMenuContents" style="display: none;">
+		<li>
+			<div id="loggedInUser">
+				<table>
+					<tbody><tr>
+						<td style="width: 48px;">
+							<div class="userPhoto">
+															</div>
+						</td>
+						<td>
+							<h4 style="margin-left: 5px;">Jane Doe (jane)</h4>
+						</td>
+					</tr>
+				</tbody></table>
+			</div>
+		</li>
+					<li>
+				<h5>Account Switching</h5>
+			</li>
+												<li class="userShortcut">
+						<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+											 				<a href="../user/switch/193733">My Company Name Inc - john</a>
+										 			</div></div></div></div>
+					</li>
+									<li class="userShortcut selected">
+						<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+											 				<a href="#" onclick="; return false;" style="font-weight: bold; font-style: italic;">My Company Name Inc - jane</a>
+										 			</div></div></div></div>
+					</li>
+										<li class="userShortcutManage">
+				<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+					<a href="#" onclick="ModalDialog.showURL('../user/connect');; return false;">Edit…</a>
+				</div></div></div></div>
+			</li>
+				<li>
+			<h5>Utilities</h5>
+		</li>
+		<li id="yourPreferences">
+			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+					 				<a href="../person/1510069/edit#preferences" title="Edit your personal information">Your Preferences</a>
+					 		</div></div></div></div>
+		</li>
+					<li id="customerCenter">
+				<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+								 			<a href="http://customer.joyent.com/login" target="_blank" title="Go to the Joyent Customer Center">Customer Center</a>
+											</div></div></div></div>
+			</li>
+				<li id="help">
+			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+				<a href="http://forum.joyent.com/" target="_blank" title="Open the Joyent Forum in a new window">
+					Help				</a>
+			</div></div></div></div>
+		</li>
+		<li id="logout">
+			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+				<a href="../logout">Sign Out</a>
+			</div></div></div></div>
+		</li>
+	</ul>
+</div>
+	
+
+<div style="width: 328px;" id="sidebars">
+	<ul id="sidebarTabs">
+		<li style="position: relative;" id="gripperSidebarTab" class="sidebarTab">
+			<a href="#" onclick="return false;" title="Resize Sidebar">&lt;=&gt;</a>
+			<script type="text/javascript">
+//<![CDATA[
+new Draggable('gripperSidebarTab', { constraint: 'horizontal', revert: SidebarResizer.revertHandle, onDrag:SidebarResizer.refresh, onEnd:SidebarResizer.savePosition });
+//]]>
+</script>
+		 </li>
+		<li id="groupsSidebarTab" class="sidebarTab selected"><a href="#" onclick="return Sidebar.Tabs.select('groups');">Groups</a></li>
+					<li id="tagsSidebarTab" class="sidebarTab"><a href="#" onclick="return Sidebar.Tabs.select('tags');">Tags</a></li>
+			<li id="accessSidebarTab" class="sidebarTab"><a href="#" onclick="return Sidebar.Tabs.select('access');">Access</a></li>
+			<li id="notifySidebarTab" class="sidebarTab"><a href="#" onclick="return Sidebar.Tabs.select('notify');">Notify</a></li>
+			</ul>
+			
+<div id="search">
+	<form action="/connect/search" method="get" style="margin: 0pt 30px 0pt 0pt; padding: 0pt;">		<input class="textInput deselected" id="searchField" name="search_string" style="width: 264px;" autosave="com.joyent.search" results="5" tabindex="1" type="search">
+	</form>	 <script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(event){ Search.init(); });
+//]]>
+</script>
+</div>
+		
+<div style="width: 264px;" id="groupsSidebar" class="sidebar selected">
+	<h3>Your List Folders</h3>
+	<div id="groupsYourInset" class="sidebarInset" style="margin-bottom: 15px;">
+		
+	
+	<div class="defaultGroups groups"><ul class="groupsList">
+		
+<li>
+			<div id="editDefaultGroupHead" class="roundtl highlighted"><div class="roundtr"><div id="defaultGroupSelectedEditDivBL" class="roundbl"><div id="defaultGroupSelectedEditDivBR" class="roundbr">
+			<table><tbody><tr>
+				<td class="dinger">
+				</td>
+				<td>
+					<a href="../lists?group=331759" class="all folder highlighted">Lists</a>
+				</td>
+				<td class="showInfo">
+					<a class="groupInfo collapsed" href="#" id="defaultGroupSelectedEditDinger" onclick="DefaultGroup.editToggle();; return false;" title="View group info">Show</a>
+				</td>
+			</tr></tbody></table>
+		</div></div></div></div>
+		<div id="editDefaultGroupDialog" class="roundbl groupInfo" style="display: none;"><div class="roundbr groupInfoMargin">
+			
+
+	<a class="groupOption access" href="#" id="standardGroupEditAccessLink" onclick="StandardGroup.toggleEditAccess();; return false;">Access</a>
+	<div id="standardGroupEditAccess" style="display: none;" class="groupOptionMenu">
+		<form action="/permissions/set_group_permissions/331759?group_type=ListFolder" method="post" onsubmit="return StandardGroup.editSubmit(this);">			 <input id="access_mode_public" name="access_mode" checked="checked" onclick="Effect.BlindUp('access_mode_restricted_info', { duration: Joyent.effectsDuration });" value="public" type="radio">
+			<label for="public">Public</label>
+			<br>
+			<input id="access_mode_restricted" name="access_mode" onclick="if (! $('access_mode_restricted_info').visible()) Effect.BlindDown('access_mode_restricted_info', { duration: Joyent.effectsDuration });" value="restricted" type="radio">
+			<label for="restricted">Restricted to you</label>
+			<br>
+			<div id="access_mode_restricted_info" style="margin: 4px 2px; display: none;">
+				Also allow:
+				<select name="user_ids[]" size="6" multiple="multiple" style="width: 100%;">
+											<option value="193733">John Smith</option>
+										
+				</select>
+			</div>
+			<div style="text-align: right;">
+				<input name="Submit" value="Save Permissions" type="submit">
+			</div>
+		</form>	 </div>
+
+
+	<a class="groupOption subscription" href="#" id="standardGroupEditSubscriptionsLink" onclick="StandardGroup.toggleEditSubscriptions();; return false;">Subscription</a>
+	<div id="standardGroupEditSubscriptions" style="display: none;" class="groupOptionMenu">
+		View this list folder in another account:
+		<ul style="margin-top: 0.4em;">
+					 		
+				<li style="line-height: 1.6em;">
+						<input onchange="performCheckboxToggleAction(this, '../subscriptions/create?subscribable_type=ListFolder&user_id=193733&organization_id=149871&subscribable_id=331759' , '../subscriptions/delete');" type="checkbox"> My Company Name Inc (john)
+				</li>
+				 	</ul>
+	</div>
+
+<hr><input onchange="performCheckboxToggleAction(this, '../connect/create_report/29/331759' , '../connect/remove_report/29/331759');" type="checkbox"> Visible in your Workspace
+<hr>
+<a href="../syndicate/lists/331759/rss" class="orangeBadge rss" title="Subscribe to this RSS feed">RSS</a>
+		</div></div>
+	</li>
+		
+<li>
+			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+			<table><tbody><tr>
+				<td class="dinger">
+				</td>
+				<td>
+					<a href="../lists/notifications" class="folder notifications">Notifications</a>
+				</td>
+				<td class="showInfo">
+				</td>
+			</tr></tbody></table>	 
+		</div></div></div></div>
+	</li>
+
+		
+		
+		
+	</ul></div>
+
+	<div id="addGroup">
+		<a href="#" id="addGroupPlus" class="plus" onclick="return AddGroupWidget.toggle();" title="Add New Folder or Smart Folder">New…</a>
+		<div id="addGroupMenu" style="display: none;">
+			<a href="#" class="folder group" onclick="return AddGroupWidget.select('standard');">List Folder</a>
+			<a href="#" class="folder smartGroup" onclick="return AddGroupWidget.select('smart');">Smart List Folder</a>
+							<a class="folder group subscription" href="#" onclick="ModalDialog.showURL('../browser?context=subscribe&app=Lists'); browser.removeBrowser(); Drawers.hideAll();; return false;">Subscription</a>
+					</div>
+	</div>
+	
+<div id="smartGroupNew" style="margin: 2px 0pt 0pt; display: none;"><div>
+	
+<form action="../smart_group/create" method="post" onsubmit="return SmartGroup.newSubmit(this);">
+	<div class="roundtl highlighted"><div class="roundtr">
+		<table><tbody><tr>
+			<td class="dinger">
+			</td>
+			<td>
+				<a href="#" class="smartGroup folder highlighted" onclick="return false;">
+								New Smart List Folder				 </a>
+			</td>
+			<td class="showInfo">
+			</td>
+		</tr></tbody></table>
+	</div></div>
+	<div class="roundbl groupInfo"><div class="roundbr groupInfoMargin">
+		Name:
+		<input id="smart_group_name" name="smart_group_name" style="width: 98%; display: block;" value="New Smart List Folder" type="text">
+		<br>
+		Match All: 
+		<fieldset>
+			<legend>Tags:</legend>
+			<div id="smartGroupNewTagList"></div>
+			<a href="#" onclick="SmartGroup.newAddTag(); return false;" class="smallAdd">Add Tag</a>
+		</fieldset>
+		<fieldset>
+			<legend>Conditions:</legend>
+			<div id="smartGroupNewAttributeList"></div>
+			<a href="#" onclick="SmartGroup.newAddAttribute(); return false;" class="smallAdd">Add Condition</a>
+		</fieldset>
+		<p style="text-align: right; margin-top: 10px;">
+			<input name="smart_group_description_id" value="15" type="hidden">
+			<input value="Cancel" onclick="SmartGroup.newCancel(); return false;" type="button">
+			<input name="Submit" value="Save" type="submit">
+		</p>
+	</div></div>
+</form>
+	<script type="text/javascript">
+	//<![CDATA[
+					SmartGroup.attributeDescriptions.push(['71', 'Any Condition']);
+					SmartGroup.attributeDescriptions.push(['43', 'Item Type']);
+					SmartGroup.attributeDescriptions.push(['57', 'Owner Username']);
+				SmartGroup.newContents = "\n<form action=\"../smart_group/create\" method=\"post\" onsubmit=\"return SmartGroup.newSubmit(this);\">\n	<div class=\"roundtl highlighted\"><div class=\"roundtr\">\n		<table><tr>\n			<td class=\"dinger\">\n	 		</td>\n			<td>\n				<a href=\"#\" class=\"smartGroup folder highlighted\" onclick=\"return false;\">\n								New Smart List Folder				 </a>\n	 		</td>\n			<td class=\"showInfo\">\n	 		</td>\n		</tr></table>\n	</div></div>\n	<div class=\"roundbl groupInfo\"><div class=\"roundbr groupInfoMargin\">\n		 Name:\n		<input id=\"smart_group_name\" name=\"smart_group_name\" style=\"width: 98%; display: block;\" type=\"text\" value=\"New Smart List Folder\" />\n		 <br />\n		 Match All: \n		<fieldset>\n	 		<legend>Tags:</legend>\n	 		<div id=\"smartGroupNewTagList\"></div>\n			<a href=\"#\" onclick=\"SmartGroup.newAddTag(); return false;\" class=\"smallAdd\">Add Tag</a>\n		</fieldset>\n		<fieldset>\n	 		<legend>Conditions:</legend>\n	 		<div id=\"smartGroupNewAttributeList\"></div>\n			<a href=\"#\" onclick=\"SmartGroup.newAddAttribute(); return false;\" class=\"smallAdd\">Add Condition</a>\n		</fieldset>\n		<p style=\"text-align: right; margin-top: 10px;\">\n			<input type=\"hidden\" name=\"smart_group_description_id\" value=\"15\" />\n			<input type=\"button\" value=\"Cancel\" onclick=\"SmartGroup.newCancel(); return false;\" />\n			<input type=\"submit\" name=\"Submit\" value=\"Save\" />\n		</p>\n	</div></div>\n</form>";
+	//]]>
+	</script>
+</div></div>
+	
+<div id="addGroupDialog" style="margin: 2px 0pt 0pt; display: none;">
+	<div>
+		<form action="/lists/create_list_folder" method="post" onsubmit="return StandardGroup.newSubmit(this);">			<div class="roundtl highlighted"><div class="roundtr">
+				<table>
+					<tbody><tr>
+						<td class="dinger">
+						</td>
+						<td>
+							<a href="#" class="folder highlighted group" onclick="return false;">
+								New List Folder		 					 </a>
+						</td>
+						<td class="showInfo">
+						</td>
+					</tr>
+				</tbody></table>
+			</div></div>
+			<div class="roundbl groupInfo"><div class="roundbr groupInfoMargin">
+				Name:
+				<input id="group_name" name="group_name" style="width: 100%; display: block;" value="New Lists Controller" type="text">
+									<input id="parent_id" name="parent_id" value="331759" type="hidden">
+								<p style="text-align: right; margin-top: 10px;">
+					<input value="Cancel" onclick="StandardGroup.newCancel();" type="button">
+					<input name="Submit" value="Save" type="submit">
+				</p>
+			</div></div>
+		</form>	 </div>
+</div>
+
+	</div>
+	<div id="groupsOthers" class="collapsiblePalette collapsed">
+		<h3><a href="#" onclick="CollapsiblePalette.toggle('groupsOthers');; return false;">Others' List Folders</a></h3>
+		<div id="groupsOthersInset" class="content sidebarInset" style="display: none;">
+			
+<div id="others_groups">
+	<ul class="groupsList">
+								<li>
+				<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+					<table><tbody><tr>
+						<td class="dinger">
+							<a class="collapsed" href="#" id="dinger_user_193733" onclick="GroupsBrowser.toggleUser('193733');; return false;">+</a>						</td>
+						<td>
+							<a class="folder user" href="#" onclick="GroupsBrowser.toggleUser('193733');; return false;" style="background-color: transparent;">John Smith</a>						 </td>
+						<td id="groups_user_spinner_193733" style="display: none; width: 16px;">
+							<div class="loadingMessageSmall"></div>
+						</td>
+					</tr></tbody></table>
+				</div></div></div></div>
+				<div id="groups_user_193733">
+									</div>
+			</li>
+			</ul>
+</div>
+		</div>
+	</div>
+</div>
+			
+<div style="width: 264px;" id="tagsSidebar" class="sidebar">
+	<div id="tagsUnavailableContainer" class="sidebarInset sidebarWarning" style="display: none;">Tags unavailable</div>
+	<div id="tagsAvailableContainer">
+		<h3>Your Assigned Tags</h3>
+		<div id="tagsAssignedInset" class="sidebarInset">
+			<div id="tagsAssignedWarning" class="sidebarWarning">No tags</div>
+			<ul id="tagsAssigned" class="tagList tagsAssigned">
+			</ul>
+		</div>
+		<div id="tagsOthersContainer">
+			<h3>Others' Assigned Tags</h3>
+			<div id="tagsOthersInset" class="sidebarInset">
+				<ul id="tagsAssignedByOthers" class="tagList tagsAssignedByOthers">
+				</ul>
+			</div>
+		</div>
+		<div id="tagsUnusedContainer">
+			<h3>Add Tags</h3>
+			<div id="tagsUnusedInset" class="sidebarInset">
+				<form action="/tag/tag_item" method="post" onsubmit="if (! Sidebar.Tags.submitTypedTag(this)) return false;; new Ajax.Request('/tag/tag_item', {asynchronous:true, evalScripts:true, onComplete:function(request){JoyentPage.pendingAddTags = JoyentPage.pendingAddTags.reject(function(tag){ return tag == $F('tag_name'); });
+												Sidebar.Tags.refresh();
+												$('tag_name').enable();
+												$('tag_name').value = '';
+												$('tag_name').activate();}, parameters:Form.serialize(this)}); $('tag_name').disable();; return false;">					<input autocomplete="off" id="tag_name" name="tag_name" style="width: 97%; margin-bottom: 10px;" tabindex="10" value="" type="text">
+					<input id="tag_name_dom_ids" name="dom_ids" value="" type="hidden">
+				</form>
+				<div style="display: none;" class="autocompleteMenu" id="tag_name_auto_complete"></div>
+				<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(event){ TagAddField.init(); });
+//]]>
+</script>
+				<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(event){ new Ajax.Autocompleter('tag_name', 'tag_name_auto_complete', '/tag/auto_complete', {}); });
+//]]>
+</script>
+				<ul id="tagsUnassigned" class="tagList tagsUnassigned">
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+		
+<div style="width: 264px;" id="accessSidebar" class="sidebar">
+	<div id="accessUnavailableContainer" class="sidebarWarning sidebarInset" style="display: none;">Access unavailable</div>
+	<div id="accessAvailableContainer">
+		<table style="width: 100%;" class="userList">
+			<colgroup>
+				<col class="names" style="width: 100%;">
+			</colgroup>
+			<thead>
+				<tr>
+					<th class="names" style="text-align: left;"><span class="viewIcon">View</span>Access</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="accessAvailableInset" class="sidebarInset">
+			<table style="width: 100%;" class="userList">
+				<colgroup>
+					<col class="names" style="width: 98%;">
+					<col class="view" style="width: 16px;">
+				</colgroup>
+				<tbody id="accessSidebarUsers">
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+		
+<div style="width: 264px;" id="notifySidebar" class="sidebar">
+	<div id="notifyUnavailableContainer" class="sidebarWarning sidebarInset" style="display: none;">Notify unavailable</div>
+	<div id="notifyAvailableContainer">
+		<table style="width: 100%;" class="userList">
+			<colgroup>
+				<col class="names" style="width: 100%;">
+			</colgroup>
+			<thead>
+				<tr>
+					<th class="names" style="text-align: left;"><span class="notifyIcon">Notified</span>Notify</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="notifyAvailableInset" class="sidebarInset">
+			<table style="width: 100%;" class="userList">
+				<colgroup>
+					<col class="names" style="width: 98%;">
+					<col class="notify" style="width: 16px;">
+				</colgroup>
+				<tbody id="notifySidebarUsers">
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+		<br clear="left">
+</div>
+	
+<ul style="left: 328px;" id="Toolbar">
+								 				<li class="actionNewRow"><a href="#" id="actionNewRowLink" onclick="ListRow.create();; return false;">New Row</a></li>
+					<li class="actionMoveUp"><a class="" href="#" id="actionMoveUpLink" onclick="ListRow.moveUp();; return false;">Move Up</a></li>
+		 <li class="actionMoveDown"><a class="disabled" href="#" id="actionMoveDownLink" onclick="ListRow.moveDown();; return false;">Move Down</a></li>
+		 <li class="actionOutdent"><a class="disabled" href="#" id="actionOutdentLink" onclick="ListRow.outdent();; return false;">Outdent</a></li>
+		 <li class="actionIndent"><a class="" href="#" id="actionIndentLink" onclick="ListRow.indent();; return false;">Indent</a></li>
+				 <li class="actionDeleteRow"><a class="" href="#" id="actionDeleteRowLink" onclick="ListRow.destroy();; return false;">Delete</a></li>
+				<li class="actionAttributes"><a class="" href="#" id="actionEditLink" onclick="List.rememberDrawerValues(); return Drawers.toggle('Edit');; return false;">Edit</a></li>
+				<li class="actionTools"><a href="#" id="actionToolsLink" onclick="return Drawers.toggle('Tools');; return false;">Tools</a></li>
+				<li class="actionNew"><a href="../lists/new">New</a></li>
+	</ul>
+	<div style="left: 328px;" id="contentPane">
+		
+<div id="Drawers">
+						<div class="drawerContent" id="drawerEdit" style="display: none;">
+<h5>Name</h5>
+<form action="../lists/40223" method="post" onsubmit="new Ajax.Request('../lists/40223', {asynchronous:true, evalScripts:true, method:'put', onComplete:function(request){List.editEnable();}, onLoading:function(request){List.editDisable();}, parameters:Form.serialize(this)}); return false;">	 <fieldset>
+		<table>
+				<tbody><tr>
+				<td><input id="list_name" name="list[name]" style="width: 250px;" value="To Do" type="text"></td>
+					<td><input id="list_name_save" name="commit" value="Save" type="submit"></td>
+				<td><div class="loadingMessageSmall" id="list_name_loading" style="background-position: 0pt 50%; display: none; float: left;"></div></td>
+			</tr>
+		</tbody></table>
+	</fieldset>
+</form><h5>Columns</h5>
+<fieldset>
+	<ul id="list_columns" style="margin: 0pt; padding: 0pt; list-style-type: none; list-style-image: none; list-style-position: outside;">
+					
+<li id="column_78611" style="border: medium none ; background: transparent none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; padding-left: 0pt;">
+	<table>
+		<tbody><tr>
+			<td class="listColumnNamesTd">
+				<form action="../list_columns/78611" method="post" onsubmit="new Ajax.Request('../list_columns/78611', {asynchronous:true, evalScripts:true, method:'put', onComplete:function(request){List.rememberDrawerValues(); ListColumn.toggleEdit('78611'); List.updateList(request.responseText)}, onLoading:function(request){ListColumn.toggleEdit('78611')}, parameters:Form.serialize(this)}); return false;">					<input id="list_column_name_78611" name="list_column[name]" style="width: 150px;" value="Item" type="text">
+				</form>			</td>
+			<td>
+				<form action="../list_columns/78611" method="post" onsubmit="new Ajax.Request('../list_columns/78611', {asynchronous:true, evalScripts:true, method:'put', onComplete:function(request){ListColumn.toggleEdit('78611'); List.updateList(request.responseText)}, onLoading:function(request){ListColumn.toggleEdit('78611')}, parameters:Form.serialize(this)}); return false;">					<select id="list_column_78611_kind" name="list_column[kind]" onchange="this.form.onsubmit();">
+						<option value="Checkbox">Checkbox</option>
+<option value="Date">Date</option>
+<option value="Number">Number</option>
+<option value="Text" selected="selected">Text</option>					</select>
+				</form>			</td>
+			<td>
+				<a class="deleteItem" href="#" id="delete_column_78611" onclick="if (confirm('Delete this column and all the values in it?')) { if (ListColumn.validateDelete(78611)) { new Ajax.Request('../list_columns/78611', {asynchronous:true, evalScripts:true, method:'delete', onComplete:function(request){List.rememberDrawerValues();}, onLoading:function(request){ListColumn.toggleEdit('78611')}}); }; }; return false;" style="">-</a>				<div id="delete_column_78611_loading" class="loadingMessageSmall" style="background-position: 0pt 50%; display: none;"></div>
+			</td>
+		</tr>
+	</tbody></table>
+</li>
+					
+<li id="column_78625" style="border: medium none ; background: transparent none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; padding-left: 0pt;">
+	<table>
+		<tbody><tr>
+			<td class="listColumnNamesTd">
+				<form action="../list_columns/78625" method="post" onsubmit="new Ajax.Request('../list_columns/78625', {asynchronous:true, evalScripts:true, method:'put', onComplete:function(request){List.rememberDrawerValues(); ListColumn.toggleEdit('78625'); List.updateList(request.responseText)}, onLoading:function(request){ListColumn.toggleEdit('78625')}, parameters:Form.serialize(this)}); return false;">					<input id="list_column_name_78625" name="list_column[name]" style="width: 150px;" value="New Column" type="text">
+				</form>			</td>
+			<td>
+				<form action="../list_columns/78625" method="post" onsubmit="new Ajax.Request('../list_columns/78625', {asynchronous:true, evalScripts:true, method:'put', onComplete:function(request){ListColumn.toggleEdit('78625'); List.updateList(request.responseText)}, onLoading:function(request){ListColumn.toggleEdit('78625')}, parameters:Form.serialize(this)}); return false;">					<select id="list_column_78625_kind" name="list_column[kind]" onchange="this.form.onsubmit();">
+						<option value="Checkbox">Checkbox</option>
+<option value="Date" selected="selected">Date</option>
+<option value="Number">Number</option>
+<option value="Text">Text</option>					</select>
+				</form>			</td>
+			<td>
+				<a class="deleteItem" href="#" id="delete_column_78625" onclick="if (confirm('Delete this column and all the values in it?')) { if (ListColumn.validateDelete(78625)) { new Ajax.Request('../list_columns/78625', {asynchronous:true, evalScripts:true, method:'delete', onComplete:function(request){List.rememberDrawerValues();}, onLoading:function(request){ListColumn.toggleEdit('78625')}}); }; }; return false;" style="">-</a>				<div id="delete_column_78625_loading" class="loadingMessageSmall" style="background-position: 0pt 50%; display: none;"></div>
+			</td>
+		</tr>
+	</tbody></table>
+</li>
+					
+<li id="column_78639" style="border: medium none ; background: transparent none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; padding-left: 0pt;">
+	<table>
+		<tbody><tr>
+			<td class="listColumnNamesTd">
+				<form action="../list_columns/78639" method="post" onsubmit="new Ajax.Request('../list_columns/78639', {asynchronous:true, evalScripts:true, method:'put', onComplete:function(request){List.rememberDrawerValues(); ListColumn.toggleEdit('78639'); List.updateList(request.responseText)}, onLoading:function(request){ListColumn.toggleEdit('78639')}, parameters:Form.serialize(this)}); return false;">					<input id="list_column_name_78639" name="list_column[name]" style="width: 150px;" value="Done" type="text">
+				</form>			</td>
+			<td>
+				<form action="../list_columns/78639" method="post" onsubmit="new Ajax.Request('../list_columns/78639', {asynchronous:true, evalScripts:true, method:'put', onComplete:function(request){ListColumn.toggleEdit('78639'); List.updateList(request.responseText)}, onLoading:function(request){ListColumn.toggleEdit('78639')}, parameters:Form.serialize(this)}); return false;">					<select id="list_column_78639_kind" name="list_column[kind]" onchange="this.form.onsubmit();">
+						<option value="Checkbox" selected="selected">Checkbox</option>
+<option value="Date">Date</option>
+<option value="Number">Number</option>
+<option value="Text">Text</option>					</select>
+				</form>			</td>
+			<td>
+				<a class="deleteItem" href="#" id="delete_column_78639" onclick="if (confirm('Delete this column and all the values in it?')) { if (ListColumn.validateDelete(78639)) { new Ajax.Request('../list_columns/78639', {asynchronous:true, evalScripts:true, method:'delete', onComplete:function(request){List.rememberDrawerValues();}, onLoading:function(request){ListColumn.toggleEdit('78639')}}); }; }; return false;" style="">-</a>				<div id="delete_column_78639_loading" class="loadingMessageSmall" style="background-position: 0pt 50%; display: none;"></div>
+			</td>
+		</tr>
+	</tbody></table>
+</li>
+			</ul>
+	<div id="newColumnAdd">
+		<a class="addItem" href="#" onclick="new Ajax.Request('../list_columns?list_id=40223', {asynchronous:true, evalScripts:true, onComplete:function(request){List.rememberDrawerValues()}, onLoading:function(request){new Insertion.Bottom('list_columns', ListColumn.tempColumn); List.fadeDown('listContainer');}}); return false;" style="">Add Column</a>	</div>
+	<div class="tip" style="margin-top: 6px;">
+		 Drag column headers below to change their order.
+	</div>
+</fieldset>
+<div class="drawerButtons">
+	<input onclick="List.drawerHide();" value="Done" type="button">
+</div></div>
+				 <div class="drawerContent" id="drawerTools" style="display: none;">
+
+
+<table border="0" width="100%">
+	<tbody><tr>
+		<td style="text-align: left;" width="50%">
+			<h5>Keyboard Shortcuts</h5>
+		</td>
+		<td style="text-align: left;" width="50%">
+			<h5>Special Values</h5>			
+		</td>
+	</tr>
+</tbody></table>
+<fieldset>
+	<table border="0" width="100%">
+		<tbody><tr>
+			<td style="border-right: 1px solid rgb(177, 177, 177); padding: 0pt 1em 0pt 0pt; vertical-align: top; width: 50%;">
+			<h6>Navigation</h6>
+				<table style="border: medium none ; text-align: left; width: 100%;" cellspacing="0">
+					<tbody><tr>
+		<td>Select Previous</td>
+		<td style="width: 7em; white-space: pre;">Ctrl-↑</td>
+	</tr>
+					<tr>
+		<td>Select Next</td>
+		<td style="width: 7em; white-space: pre;">Ctrl-↓</td>
+	</tr>
+					<tr>
+		<td>Expand</td>
+		<td style="width: 7em; white-space: pre;">Ctrl-→</td>
+	</tr>
+					<tr>
+		<td>Collapse</td>
+		<td style="width: 7em; white-space: pre;">Ctrl-←</td>
+	</tr>
+				</tbody></table>
+			<h6 style="margin-top: 1em;">Editing</h6>
+				<table style="border: medium none ; text-align: left; width: 100%;" cellspacing="0">
+					<tbody><tr>
+		<td>Move Up</td>
+		<td style="width: 7em; white-space: pre;">Ctrl-Shift-↑</td>
+	</tr>
+					<tr>
+		<td>Move Down</td>
+		<td style="width: 7em; white-space: pre;">Ctrl-Shift-↓</td>
+	</tr>
+					<tr>
+		<td>Move Left</td>
+		<td style="width: 7em; white-space: pre;">Ctrl-Shift-←</td>
+	</tr>
+					<tr>
+		<td>Move Right</td>
+		<td style="width: 7em; white-space: pre;">Ctrl-Shift-→</td>
+	</tr>
+					<tr>
+		<td>New Row</td>
+		<td style="width: 7em; white-space: pre;">Ctrl-Shift-n</td>
+	</tr>
+					<tr>
+		<td>Delete Row</td>
+		<td style="width: 7em; white-space: pre;">Ctrl-Shift-d</td>
+	</tr>
+					<tr>
+		<td>Toggle First Checkbox</td>
+		<td style="width: 7em; white-space: pre;">Spacebar</td>
+	</tr>
+				</tbody></table>
+			</td>
+			<td style="padding: 0pt 0pt 0pt 1em; vertical-align: top; width: 50%;">
+					 <h6>Checkboxes</h6>
+					 <p>
+					 	When changing a column from Text to Checkbox the values 'true', 't', 'yes', 'y', '1', and '2' will be checked.
+					 </p>
+					<h6>Dates</h6>
+					 <p>
+						Various ways of entering dates are supported, such as:
+						'10/23/2009', '4 jan 2010', 'today', 'tomorrow', 
+						'2 days from now', 'next week', 'Oct 2006', 'january 5', '3rd wednesday in nov'
+					 </p>
+					 <h6>Numbers</h6>
+					 <p>
+						A number cell with the value '+' will sum the values of its children.
+					 </p>
+			</td>
+		</tr>
+	</tbody></table>
+</fieldset>
+
+<div class="drawerButtons">
+	<input value="Done" onclick="Drawers.hide('Tools');" type="button">
+</div></div>
+	</div>
+		<div id="contentWrapper">
+			
+
+
+			 
+<script type="text/javascript">
+//<![CDATA[
+Item.create({ domId: 'list_40223', arId: '40223', arType: 'List', userDomId: 'user_193635', selected: true, canEdit: true, canCopy: true, canMove: true, canDelete: true, mustConfirmDelete: false });
+User.create({ domId: 'user_193635', arId: 193635, personDomId: 'person_1510069', username: 'jane', fullName: 'Jane%20Doe', sortName: 'Doe%20Jane%20', current: true, selected: true });
+User.create({ domId: 'user_193733', arId: 193733, personDomId: 'person_1510167', username: 'john', fullName: 'John%20Smith', sortName: 'Smith%20John%20', current: false, selected: false });
+//]]>
+</script><script type="text/javascript">
+//<![CDATA[
+List.selectedList = 40223;
+//]]>
+</script><script type="text/javascript">
+//<![CDATA[
+Event.observe(document, 'keypress', List.onKeyPress.bindAsEventListener(this));
+//]]>
+</script>
+<div class="infobox">
+	<table style="width: 100%;">
+		<tbody><tr>
+			<td style="text-align: left;">				
+				<h2 id="listNameShowView">To Do</h2>
+			</td>
+			<td style="text-align: right;">			
+				<a href="../lists/40223.opml" button_class="download" class="buttonStandard" style=""><div class="buttonStandardLeft"><div class="buttonStandardRight"><div class="buttonStandardBG"><span class="download">Download As OPML</span></div></div></div></a>			</td>
+		</tr>
+	</tbody></table>
+</div>
+
+<div style="opacity: 0.999999;" id="listContainer">
+<table class="tableList" id="tableList" style="width: 100%;">
+	<thead>
+		<tr id="listHeaderColumns"><th class="listRadio checkbox firstCol" style="width: 25px;"><a href="#" onclick="ListRow.selectFirst();; return false;">Select First Row</a></th><th class="listDinger expanded" style="width: 24px;" id="list_toggle_all"><a href="#" onclick="List.toggleExpanded();; return false;">Expand + Collapse</a></th><th class="columnHeaderValue" id="list_column_78611" style="text-align: left; position: relative;" columndomid="list_column_78611">Item</th><th class="columnHeaderValue" id="list_column_78625" style="width: 125px; text-align: left; position: relative;" columndomid="list_column_78625">Due Date</th><th class="columnHeaderValue secondlastCol" id="list_column_78639" style="width: 36px; text-align: left; position: relative;" columndomid="list_column_78639">Done</th><th style="width: 2px;">&nbsp;</th></tr>
+	</thead>
+	<tbody id="listsTbody" class="listsTableBody">
+				
+		
+
+<tr id="list_row_235957" class="itemRow root evenRow" arid="235957">
+	<td class="first checkbox" style="text-align: center;">
+		<a class="rowSelector" href="#" id="list_row_235957_selector" onclick="ListRow.toggleSelected(235957);; return false;">&nbsp;</a>
+	</td>
+	<td class="listRowDinger" style="padding-left: 0px;">
+		<a class="listDinger" href="#" id="list_row_235957_dinger" onclick="; return false;">&nbsp;</a>	 </td>
+					<td class="listCell text" style="padding-left: 5px; padding-right: 0pt;" columndomid="list_column_78611">
+			<div style="height: 15px; background-color: transparent;" title="Click to edit" id="list_cell_549823" new_row="false" class="listEditable text">Client Name Inc - Build wireframes</div>
+		</td>
+					<td class="listCell date" style="padding-left: 5px; padding-right: 0pt; width: 125px;" columndomid="list_column_78625">
+			<div style="height: 15px;" title="Click to edit" id="list_cell_549837" new_row="false" class="listEditable date">20 Apr 2008</div>
+		</td>
+					<td class="listCell checkbox secondlastCol" style="padding-left: 5px; padding-right: 0pt; width: 36px;" columndomid="list_column_78639">
+			<input class="listEditable checkbox" id="list_cell_549851" name="list_cell[value]" onclick="ListCell.updateCheckbox(549851);" value="true" type="checkbox">
+		</td>
+		<td class="lastCol">&nbsp;</td>
+</tr>
+
+
+				
+		
+
+<tr id="list_row_235971" class="itemRow root oddRow" arid="235971">
+	<td class="first checkbox" style="text-align: center;">
+		<a class="rowSelector" href="#" id="list_row_235971_selector" onclick="ListRow.toggleSelected(235971);; return false;">&nbsp;</a>
+	</td>
+	<td class="listRowDinger" style="padding-left: 0px;">
+		<a class="listDinger" href="#" id="list_row_235971_dinger" onclick="; return false;">&nbsp;</a>	 </td>
+					<td class="listCell text" style="padding-left: 5px; padding-right: 0pt;" columndomid="list_column_78611">
+			<div style="height: 15px; background-color: transparent;" title="Click to edit" id="list_cell_549865" new_row="false" class="listEditable text">Client Name Inc - Fast Prototyping</div>
+		</td>
+					<td class="listCell date" style="padding-left: 5px; padding-right: 0pt; width: 125px;" columndomid="list_column_78625">
+			<div style="height: 15px;" title="Click to edit" id="list_cell_549879" new_row="false" class="listEditable date">22 Apr 2008</div>
+		</td>
+					<td class="listCell checkbox secondlastCol" style="padding-left: 5px; padding-right: 0pt; width: 36px;" columndomid="list_column_78639">
+			<input class="listEditable checkbox" id="list_cell_549893" name="list_cell[value]" onclick="ListCell.updateCheckbox(549893);" value="true" type="checkbox">
+		</td>
+		<td class="lastCol">&nbsp;</td>
+</tr>
+
+
+				
+		
+
+<tr id="list_row_235985" class="itemRow root evenRow selected" arid="235985">
+	<td class="first checkbox" style="text-align: center;">
+		<a class="rowSelector" href="#" id="list_row_235985_selector" onclick="ListRow.toggleSelected(235985);; return false;">&nbsp;</a>
+	</td>
+	<td class="listRowDinger" style="padding-left: 0px;">
+		<a class="listDinger" href="#" id="list_row_235985_dinger" onclick="; return false;">&nbsp;</a>	 </td>
+					<td class="listCell text" style="padding-left: 5px; padding-right: 0pt;" columndomid="list_column_78611">
+			<div style="height: 15px; background-color: transparent;" title="Click to edit" id="list_cell_549907" new_row="true" class="listEditable text">Client Name Inc - Design Concepts</div>
+		</td>
+					<td class="listCell date" style="padding-left: 5px; padding-right: 0pt; width: 125px;" columndomid="list_column_78625">
+			<div style="height: 15px; background-color: transparent;" title="Click to edit" id="list_cell_549921" new_row="true" class="listEditable date">24 Apr 2008</div>
+		</td>
+					<td class="listCell checkbox secondlastCol" style="padding-left: 5px; padding-right: 0pt; width: 36px;" columndomid="list_column_78639">
+			<input class="listEditable checkbox" id="list_cell_549935" name="list_cell[value]" onclick="ListCell.updateCheckbox(549935);" value="true" type="checkbox">
+		</td>
+		<td class="lastCol">&nbsp;</td>
+</tr>
+
+
+			</tbody>
+</table>
+
+</div>
+
+
+<div id="comments" class="CommentsCollapsed">
+	<h3 class=""><a href="#" onclick="return CommentList.toggle();">Comments (<span id="comment-count">0</span>)</a></h3>
+	<div id="commentsExpanded" style="display: none;">
+		<div id="comment-listing">
+			 
+		</div>
+		<div class="commentForm">
+			<form action="../comments/add/40223" method="post" onsubmit="new Ajax.Request('../comments/add/40223', {asynchronous:true, evalScripts:true, parameters:Form.serialize(this)}); $('comment-submit').disabled = true;; return false;">				<input id="item_type" name="item_type" value="List" type="hidden">
+				<h4>Jane Doe Said…</h4>
+				<textarea id="comment-body" name="body" cols="50" rows="10" style="padding: 0.5em; width: 44em;"></textarea>
+				<div><input id="comment-submit" value="	 Post	 " style="margin-top: 1em;" type="submit"></div>
+			</form>		</div>
+	</div>
+</div>
+		</div>
+	</div>
+	<div id="overlay" class="overlay"></div>
+	<div id="modalDialog"><div id="lbLoadMessage"></div></div>
+	<script type="text/javascript">
+	//<![CDATA[
+		Joyent.applicationName = 'lists';
+		Joyent.groupName = 'List Folder';
+		Joyent.viewKind = '';
+		
+		Tag.create({ domId: 'tag_90329', arId: 90329, name: 'Application' });
+Tag.create({ domId: 'tag_90217', arId: 90217, name: 'CSS' });
+Tag.create({ domId: 'tag_90231', arId: 90231, name: 'Design' });
+Tag.create({ domId: 'tag_90287', arId: 90287, name: 'Designers' });
+Tag.create({ domId: 'tag_90273', arId: 90273, name: 'Developers' });
+Tag.create({ domId: 'tag_90301', arId: 90301, name: 'Marketing' });
+Tag.create({ domId: 'tag_90245', arId: 90245, name: 'Open%20Source' });
+Tag.create({ domId: 'tag_90315', arId: 90315, name: 'Strategy' });
+Tag.create({ domId: 'tag_90259', arId: 90259, name: 'Web' });
+		Event.observe(window, 'load', function(event){ JoyentPage.refresh(); });
+		Event.observe(window, 'load', function(event){ SidebarResizer.refresh(); });
+		$$('textarea').each(function(element){ new ResizingTextArea(element); });
+	//]]>
+	</script>
+</body></html>

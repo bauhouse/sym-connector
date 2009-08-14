@@ -1,0 +1,74 @@
+/*
+++
+Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+--
+*/
+
+					
+		#Drawers dl {
+			margin-bottom: 1em !important;
+		}
+		#Drawers dd+dt {	
+			margin-top:0 !important;
+			}
+		#Drawers dd {
+			margin:0.3em 0 0.3em 10.5em !important;
+			}
+		
+		#Drawers hr {
+			border-color: #A3A4A3 #A3A4A3 #FFF #A3A4A3;
+			border-width: 1px 0 1px 0;
+			border-style: solid;
+		}
+
+
+/* jajah ----------------------------------------*/
+
+ .your_number {
+ 	background-color: #D8D8D8;
+ 	-moz-border-radius: .8em .8em .8em .8em;
+ 	-webkit-border-top-left-radius: .8em;
+ 	-webkit-border-top-right-radius: .8em;
+ 	-webkit-border-bottom-left-radius: .8em;
+ 	-webkit-border-bottom-right-radius: .8em;
+ 	padding: 5px 0 1px 0;
+ 	margin-bottom: 1em;
+ }
+ 
+ /* Manage --------------------------------------------- */
+
+.manage.columns_4 .column {
+  width: 23%;
+}
+
+.manage .column {
+  float: left;
+  display: block;
+  margin-left: 2%;
+}
+.manage .column ul li {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: .25em .25em .25em 1em;
+  -moz-border-radius: 1em 1em 1em 1em;
+  -webkit-border-radius: .95em;
+  margin-bottom: .15em;
+}
+.manage .column ul li.manage_selected {
+  background-color: #DDD;
+}
+.manage .column ul li .manage_desc {
+  background-image: url(/images/icons/groupFolder.png);
+  background-repeat: no-repeat;
+  background-position: left 0;
+  padding: .15em 0 .15em 18px;
+}
+

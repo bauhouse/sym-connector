@@ -1,0 +1,130 @@
+/*
+++
+Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+--
+*/
+
+/* Dock ----------------------------------------------------------------- */
+
+	/* This stuff will be moved
+	to a new set of app specific
+	CSS files, that persist across
+	all apps */	
+	.dockConnect a {	
+		background-image: url(/images/lang/es/app-connect.png);
+		}
+	.dockMail a {	
+		background-image: url(/images/lang/es/app-mail.png);
+		}
+	.dockCalendar a {		
+		background-image: url(/images/lang/es/app-calendar.png);
+		}
+	.dockPeople a {	
+		background-image: url(/images/lang/es/app-people.png);
+		}
+	.dockFiles a {	
+		background-image: url(/images/lang/es/app-files.png);
+		}
+	.dockBookmarks a {	
+		background-image: url(/images/lang/es/app-bookmarks.png);
+		}
+	.dockLists a {	
+		background-image: url(/images/lang/es/app-lists.png);
+		}
+	/* end stuff */
+
+
+/* Sidebar Tabs ----------------------------------------------------------------- */
+
+
+	.sidebarTab a {
+		background-image: url(/images/lang/es/tabs.png);
+		}
+	#groupsSidebarTab a {
+		height: 83px;
+		}	
+	#rulesSidebarTab a {
+		height: 86px;
+		}	
+	#tagsSidebarTab a {
+		height: 80px;
+		}	
+	#accessSidebarTab a {
+		height: 82px;
+		}	
+	#notifySidebarTab a {
+		height: 87px;
+		}	
+
+
+/* General Toolbar (actions) -------------------------------------------- */
+
+	.actionMove a {	
+		width: 68px !important;
+		background-image: url(/images/lang/es/actionsGeneral.png);
+		}
+	.actionCopy a {	
+		width: 69px !important;
+		background-image: url(/images/lang/es/actionsGeneral.png);
+		}
+	.actionCopyDirect a {	
+		width: 66px !important;
+		background-image: url(/images/lang/es/actionsGeneral.png);
+		}
+	.actionNew a {	
+		width: 64px !important;
+		background-image: url(/images/lang/es/actionsGeneral.png);
+		}
+	.actionImport a {
+		width: 79px !important;
+		background-image: url(/images/lang/es/actionsGeneral.png);
+		}
+	.actionShowAll a {
+		width: 109px !important;
+		background-image: url(/images/lang/es/actionsGeneral.png);
+		}
+	.actionShowNew a {
+		width: 115px !important;
+		background-image: url(/images/lang/es/actionsGeneral.png);
+		}
+	.actionDelete a {	
+		width: 66px !important;
+		background-image: url(/images/lang/es/actionsGeneral.png);
+		}
+	.actionSaveSearch a {	
+		width: 129px !important;
+		background-image: url(/images/lang/es/actionsGeneral.png);
+		}
+	.actionTools a {	
+		width: 103px !important;
+		background-image: url(/images/lang/es/actionsGeneral.png);
+		}
+	.actionEdit a {
+		width: 60px !important;
+		background-image: url(/images/lang/es/actionsGeneral.png);
+		}
+	.actionSpam a {
+	    width: 64px !important;
+	    }
+	.actionNotSpam a {
+	    width: 85px !important;
+	    }
+	.actionDeleteAllSpam a {
+	    width: 114px !important;
+	    }
+	
+/* Spanish fixes */
+
+#people #contentPane dt {
+	width: 13em;
+}
+#graphLabel {
+	width: 13em;
+}

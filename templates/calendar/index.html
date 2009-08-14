@@ -1,0 +1,921 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	
+	<title>My Company Name Inc Connector : Calendar : All Events</title>
+
+	<meta name="viewport" content="width=750; height=2000">
+	<meta name="copyright" content="Copyright 2004-2007 Joyent Inc.">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"><!-- Joyent Connecter rev. 539 -->
+	
+	<script src="../javascripts/lang/en.js" type="text/javascript"></script>
+	<script src="../javascripts/all.js" type="text/javascript"></script>
+	<script src="../javascripts/calendar.js" type="text/javascript"></script>
+	<link href="../stylesheets/all.css" media="screen" rel="Stylesheet" type="text/css">
+	<link href="../stylesheets/joyent.css" media="screen" rel="Stylesheet" type="text/css">
+	<link href="../stylesheets/calendar.css" media="screen" rel="Stylesheet" type="text/css">
+	<link href="../stylesheets/lang/en/en-calendar.css" media="screen" rel="Stylesheet" type="text/css">
+	<link href="../stylesheets/lang/en/en.css" media="screen" rel="Stylesheet" type="text/css">
+	<!--[if IE 6]>
+	<link href="../stylesheets/ie6.css" media="screen" rel="Stylesheet" type="text/css" />
+	<![endif]-->
+	<!--[if IE 7]>
+	<link href="../stylesheets/ie7.css" media="screen" rel="Stylesheet" type="text/css" />
+	<![endif]-->
+
+
+	<style type="text/css">
+		#sidebars {width: 329px;}
+		#searchField {width: 265px;}
+		.sidebar {width: 266px;}
+		#contentPane {left: 329px;}
+		#Toolbar {left: 329px;}
+		#Toolbar {width: expression((document.body.clientWidth - 329) + "px");}
+		#contentPane {width: expression((document.body.clientWidth - 329) + "px");}
+		body {background-position: 300px;}
+	</style></head><body style="background-position: 299px 50%;" id="calendar">
+	
+
+	<ul id="Dock">
+			<li class="dockConnect">
+				 <a href="../connect/" title="Connect">Connect</a>
+			</li>
+			<li class="dockMail">
+				 <a href="../mail/" title="Mail">Mail</a>
+			</li>
+			<li class="dockCalendar">
+				 <a href="../calendar/" title="Calendar">Calendar</a>
+			</li>
+			<li class="dockPeople">
+				 <a href="../people/" title="People">People</a>
+			</li>
+			<li class="dockFiles">
+				 <a href="../files/" title="Files">Files</a>
+			</li>
+			<li class="dockBookmarks">
+				 <a href="../bookmarks/" title="Bookmarks">Bookmarks</a>
+			</li>
+			<li class="dockLists">
+				 <a href="../lists/" title="Lists">Lists</a>
+			</li>
+	</ul>
+
+		
+<div id="plusMenu">
+	<a href="#" id="plusMenuLink" class="collapsed" onclick="return MenuItems.toggle();">+</a>
+	<ul id="plusMenuContents" style="display: none;">
+		<li>
+			<div id="loggedInUser">
+				<table>
+					<tbody><tr>
+						<td style="width: 48px;">
+							<div class="userPhoto">
+															</div>
+						</td>
+						<td>
+							<h4 style="margin-left: 5px;">Jane Doe (jane)</h4>
+						</td>
+					</tr>
+				</tbody></table>
+			</div>
+		</li>
+					<li>
+				<h5>Account Switching</h5>
+			</li>
+												<li class="userShortcut">
+						<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+											 				<a href="../user/switch/193733">My Company Name Inc - john</a>
+										 			</div></div></div></div>
+					</li>
+									<li class="userShortcut selected">
+						<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+											 				<a href="#" onclick="; return false;" style="font-weight: bold; font-style: italic;">My Company Name Inc - jane</a>
+										 			</div></div></div></div>
+					</li>
+										<li class="userShortcutManage">
+				<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+					<a href="#" onclick="ModalDialog.showURL('../user/connect');; return false;">Edit…</a>
+				</div></div></div></div>
+			</li>
+				<li>
+			<h5>Utilities</h5>
+		</li>
+		<li id="yourPreferences">
+			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+					 				<a href="../person/1510069/edit#preferences" title="Edit your personal information">Your Preferences</a>
+					 		</div></div></div></div>
+		</li>
+					<li id="customerCenter">
+				<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+								 			<a href="http://customer.joyent.com/login" target="_blank" title="Go to the Joyent Customer Center">Customer Center</a>
+											</div></div></div></div>
+			</li>
+				<li id="help">
+			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+				<a href="http://forum.joyent.com/" target="_blank" title="Open the Joyent Forum in a new window">
+					Help				</a>
+			</div></div></div></div>
+		</li>
+		<li id="logout">
+			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+				<a href="../logout">Sign Out</a>
+			</div></div></div></div>
+		</li>
+	</ul>
+</div>
+	
+
+<div style="width: 328px;" id="sidebars">
+	<ul id="sidebarTabs">
+		<li style="position: relative;" id="gripperSidebarTab" class="sidebarTab">
+			<a href="#" onclick="return false;" title="Resize Sidebar">&lt;=&gt;</a>
+			<script type="text/javascript">
+//<![CDATA[
+new Draggable('gripperSidebarTab', { constraint: 'horizontal', revert: SidebarResizer.revertHandle, onDrag:SidebarResizer.refresh, onEnd:SidebarResizer.savePosition });
+//]]>
+</script>
+		 </li>
+		<li id="groupsSidebarTab" class="sidebarTab selected"><a href="#" onclick="return Sidebar.Tabs.select('groups');">Groups</a></li>
+					<li id="tagsSidebarTab" class="sidebarTab"><a href="#" onclick="return Sidebar.Tabs.select('tags');">Tags</a></li>
+			<li id="accessSidebarTab" class="sidebarTab"><a href="#" onclick="return Sidebar.Tabs.select('access');">Access</a></li>
+			<li id="notifySidebarTab" class="sidebarTab"><a href="#" onclick="return Sidebar.Tabs.select('notify');">Notify</a></li>
+			</ul>
+			
+<div id="search">
+	<form action="/connect/search" method="get" style="margin: 0pt 30px 0pt 0pt; padding: 0pt;">		<input class="textInput deselected" id="searchField" name="search_string" style="width: 264px;" autosave="com.joyent.search" results="5" tabindex="1" type="search">
+	</form>	 <script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(event){ Search.init(); });
+//]]>
+</script>
+</div>
+		
+<div style="width: 264px;" id="groupsSidebar" class="sidebar selected">
+	<h3>Your Calendars</h3>
+	<div id="groupsYourInset" class="sidebarInset" style="margin-bottom: 15px;">
+		
+	<div class="defaultGroups groups"><ul class="groupsList">
+		
+<li>
+			<div id="editDefaultGroupHead" class="roundtl highlighted"><div class="roundtr"><div id="defaultGroupSelectedEditDivBL" class="roundbl"><div id="defaultGroupSelectedEditDivBR" class="roundbr">
+			<table><tbody><tr>
+				<td class="dinger">
+				</td>
+				<td>
+					<a href="../calendar/all/month" class="all folder highlighted">All Events</a>
+				</td>
+				<td class="showInfo">
+					<a class="groupInfo collapsed" href="#" id="defaultGroupSelectedEditDinger" onclick="DefaultGroup.editToggle();; return false;" title="View group info">Show</a>
+				</td>
+			</tr></tbody></table>
+		</div></div></div></div>
+		<div id="editDefaultGroupDialog" class="roundbl groupInfo" style="display: none;"><div class="roundbr groupInfoMargin">
+			
+<input onchange="performCheckboxToggleAction(this, '../connect/create_report/14/193635' , '../connect/remove_report/14/193635');" type="checkbox"> Visible in your Workspace
+<hr>
+<a href="../syndicate/calendar/all/ics" class="orangeBadge icsIcon" style="margin-bottom: 3px;" title="Subscribe to this ICS calendar">ICS</a>
+<a href="../syndicate/calendar/all/rss" class="orangeBadge rss" title="Subscribe to this RSS feed">RSS</a>
+
+		</div></div>
+	</li>
+		
+<li>
+			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+			<table><tbody><tr>
+				<td class="dinger">
+				</td>
+				<td>
+					<a href="../calendar/notifications" class="folder notifications">Notifications</a>
+				</td>
+				<td class="showInfo">
+				</td>
+			</tr></tbody></table>	 
+		</div></div></div></div>
+	</li>
+
+		
+<li>
+			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+			<table><tbody><tr>
+				<td class="dinger">
+				</td>
+				<td>
+					<a href="../calendar/weeks_events/193635" class="folder eventsReport">This Week's Events</a>
+				</td>
+				<td class="showInfo">
+				</td>
+			</tr></tbody></table>	 
+		</div></div></div></div>
+	</li>
+		
+<li>
+			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+			<table><tbody><tr>
+				<td class="dinger">
+				</td>
+				<td>
+					<a href="../calendar/todays_events/193635" class="folder eventsReport">Today's Events</a>
+				</td>
+				<td class="showInfo">
+				</td>
+			</tr></tbody></table>	 
+		</div></div></div></div>
+	</li>
+																																				 
+		
+					
+
+<li>
+			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+			<table><tbody><tr>
+				<td class="dinger">
+									 </td>
+				<td>
+					<a href="../calendar/209679/month" class="folder group">Jane Doe</a>
+				</td>
+				<td class="showInfo">
+					<div id="standard_group_spinner_209679" class="loadingSmallGrey" style="display: none;"></div>
+				</td>
+			</tr></tbody></table>	 
+		</div></div></div></div>
+				 <div id="groups_standard_group_209679">
+					</div>
+	</li>
+		
+		
+	</ul></div>
+
+	<div id="addGroup">
+		<a href="#" id="addGroupPlus" class="plus" onclick="return AddGroupWidget.toggle();" title="Add New Calendar or Smart Calendar">New…</a>
+		<div id="addGroupMenu" style="display: none;">
+			<a href="#" class="folder group" onclick="return AddGroupWidget.select('standard');">Calendar</a>
+			<a href="#" class="folder smartGroup" onclick="return AddGroupWidget.select('smart');">Smart Calendar</a>
+					<a class="folder group subscription" href="#" onclick="ModalDialog.showURL('../browser?context=subscribe&app=Calendar'); browser.removeBrowser(); Drawers.hideAll();; return false;">Subscription</a>
+				</div>
+	</div>
+	
+<div id="smartGroupNew" style="margin: 2px 0pt 0pt; display: none;"><div>
+	
+<form action="../smart_group/create" method="post" onsubmit="return SmartGroup.newSubmit(this);">
+	<div class="roundtl highlighted"><div class="roundtr">
+		<table><tbody><tr>
+			<td class="dinger">
+			</td>
+			<td>
+				<a href="#" class="smartGroup folder highlighted" onclick="return false;">
+								New Smart Calendar				</a>
+			</td>
+			<td class="showInfo">
+			</td>
+		</tr></tbody></table>
+	</div></div>
+	<div class="roundbl groupInfo"><div class="roundbr groupInfoMargin">
+		Name:
+		<input id="smart_group_name" name="smart_group_name" style="width: 98%; display: block;" value="New Smart Calendar" type="text">
+		<br>
+		Match All: 
+		<fieldset>
+			<legend>Tags:</legend>
+			<div id="smartGroupNewTagList"></div>
+			<a href="#" onclick="SmartGroup.newAddTag(); return false;" class="smallAdd">Add Tag</a>
+		</fieldset>
+		<fieldset>
+			<legend>Conditions:</legend>
+			<div id="smartGroupNewAttributeList"></div>
+			<a href="#" onclick="SmartGroup.newAddAttribute(); return false;" class="smallAdd">Add Condition</a>
+		</fieldset>
+		<p style="text-align: right; margin-top: 10px;">
+			<input name="smart_group_description_id" value="4" type="hidden">
+			<input value="Cancel" onclick="SmartGroup.newCancel(); return false;" type="button">
+			<input name="Submit" value="Save" type="submit">
+		</p>
+	</div></div>
+</form>
+	<script type="text/javascript">
+	//<![CDATA[
+					SmartGroup.attributeDescriptions.push(['22', 'Any Condition']);
+					SmartGroup.attributeDescriptions.push(['14', 'Event Name']);
+					SmartGroup.attributeDescriptions.push(['8', 'Location']);
+					SmartGroup.attributeDescriptions.push(['9', 'Notes']);
+					SmartGroup.attributeDescriptions.push(['11', 'Owner Username']);
+					SmartGroup.attributeDescriptions.push(['15', 'Repeat Type']);
+				SmartGroup.newContents = "\n<form action=\"../smart_group/create\" method=\"post\" onsubmit=\"return SmartGroup.newSubmit(this);\">\n	<div class=\"roundtl highlighted\"><div class=\"roundtr\">\n		<table><tr>\n			<td class=\"dinger\">\n	 		</td>\n			<td>\n				<a href=\"#\" class=\"smartGroup folder highlighted\" onclick=\"return false;\">\n								New Smart Calendar				</a>\n			</td>\n	 		<td class=\"showInfo\">\n			</td>\n	 	</tr></table>\n	 </div></div>\n	<div class=\"roundbl groupInfo\"><div class=\"roundbr groupInfoMargin\">\n		Name:\n		 <input id=\"smart_group_name\" name=\"smart_group_name\" style=\"width: 98%; display: block;\" type=\"text\" value=\"New Smart Calendar\" />\n		 <br />\n		 Match All: \n		<fieldset>\n	 		<legend>Tags:</legend>\n	 		<div id=\"smartGroupNewTagList\"></div>\n			<a href=\"#\" onclick=\"SmartGroup.newAddTag(); return false;\" class=\"smallAdd\">Add Tag</a>\n		</fieldset>\n		<fieldset>\n	 		<legend>Conditions:</legend>\n	 		<div id=\"smartGroupNewAttributeList\"></div>\n			<a href=\"#\" onclick=\"SmartGroup.newAddAttribute(); return false;\" class=\"smallAdd\">Add Condition</a>\n		</fieldset>\n		<p style=\"text-align: right; margin-top: 10px;\">\n			<input type=\"hidden\" name=\"smart_group_description_id\" value=\"4\" />\n			 <input type=\"button\" value=\"Cancel\" onclick=\"SmartGroup.newCancel(); return false;\" />\n			 <input type=\"submit\" name=\"Submit\" value=\"Save\" />\n		 </p>\n	 </div></div>\n</form>";
+	//]]>
+	</script>
+</div></div>
+		
+<div id="addGroupDialog" style="margin: 2px 0pt 0pt; display: none;">
+	<div>
+		<form action="/calendar/create_calendar" method="post" onsubmit="return StandardGroup.newSubmit(this);">			<div class="roundtl highlighted"><div class="roundtr">
+				<table>
+					<tbody><tr>
+						<td class="dinger">
+						</td>
+						<td>
+							<a href="#" class="folder highlighted group" onclick="return false;">
+								New Calendar							</a>
+						</td>
+						<td class="showInfo">
+						</td>
+					</tr>
+				</tbody></table>
+			</div></div>
+			<div class="roundbl groupInfo"><div class="roundbr groupInfoMargin">
+				Name:
+				<input id="group_name" name="group_name" style="width: 100%; display: block;" value="New Calendar Controller" type="text">
+									<input id="parent_id" name="parent_id" type="hidden">
+								<p style="text-align: right; margin-top: 10px;">
+					<input value="Cancel" onclick="StandardGroup.newCancel();" type="button">
+					<input name="Submit" value="Save" type="submit">
+				</p>
+			</div></div>
+		</form>	 </div>
+</div>
+
+	</div>
+	<div id="groupsOthers" class="collapsiblePalette collapsed">
+		<h3><a href="#" onclick="CollapsiblePalette.toggle('groupsOthers');; return false;">Others' Calendars</a></h3>
+		<div id="groupsOthersInset" class="content sidebarInset" style="display: none;">
+			
+<div id="others_groups">
+	<ul class="groupsList">
+								<li>
+				<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+					<table><tbody><tr>
+						<td class="dinger">
+							<a class="collapsed" href="#" id="dinger_user_193733" onclick="GroupsBrowser.toggleUser('193733');; return false;">+</a>						</td>
+						<td>
+							<a class="folder user" href="#" onclick="GroupsBrowser.toggleUser('193733');; return false;" style="background-color: transparent;">John Smith</a>						 </td>
+						<td id="groups_user_spinner_193733" style="display: none; width: 16px;">
+							<div class="loadingMessageSmall"></div>
+						</td>
+					</tr></tbody></table>
+				</div></div></div></div>
+				<div id="groups_user_193733">
+									</div>
+			</li>
+			</ul>
+</div>
+		</div>
+	</div>
+</div>
+			
+<div style="width: 264px;" id="tagsSidebar" class="sidebar">
+	<div id="tagsUnavailableContainer" class="sidebarInset sidebarWarning" style="display: none;">Tags unavailable</div>
+	<div id="tagsAvailableContainer">
+		<h3>Your Assigned Tags</h3>
+		<div id="tagsAssignedInset" class="sidebarInset">
+			<div id="tagsAssignedWarning" class="sidebarWarning">No tags</div>
+			<ul id="tagsAssigned" class="tagList tagsAssigned">
+			</ul>
+		</div>
+		<div id="tagsOthersContainer">
+			<h3>Others' Assigned Tags</h3>
+			<div id="tagsOthersInset" class="sidebarInset">
+				<ul id="tagsAssignedByOthers" class="tagList tagsAssignedByOthers">
+				</ul>
+			</div>
+		</div>
+		<div id="tagsUnusedContainer">
+			<h3>Add Tags</h3>
+			<div id="tagsUnusedInset" class="sidebarInset">
+				<form action="/tag/tag_item" method="post" onsubmit="if (! Sidebar.Tags.submitTypedTag(this)) return false;; new Ajax.Request('/tag/tag_item', {asynchronous:true, evalScripts:true, onComplete:function(request){JoyentPage.pendingAddTags = JoyentPage.pendingAddTags.reject(function(tag){ return tag == $F('tag_name'); });
+												Sidebar.Tags.refresh();
+												$('tag_name').enable();
+												$('tag_name').value = '';
+												$('tag_name').activate();}, parameters:Form.serialize(this)}); $('tag_name').disable();; return false;">					<input autocomplete="off" id="tag_name" name="tag_name" style="width: 97%; margin-bottom: 10px;" tabindex="10" value="" type="text">
+					<input id="tag_name_dom_ids" name="dom_ids" value="" type="hidden">
+				</form>
+				<div style="display: none;" class="autocompleteMenu" id="tag_name_auto_complete"></div>
+				<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(event){ TagAddField.init(); });
+//]]>
+</script>
+				<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(event){ new Ajax.Autocompleter('tag_name', 'tag_name_auto_complete', '/tag/auto_complete', {}); });
+//]]>
+</script>
+				<ul id="tagsUnassigned" class="tagList tagsUnassigned">
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+		
+<div style="width: 264px;" id="accessSidebar" class="sidebar">
+	<div id="accessUnavailableContainer" class="sidebarWarning sidebarInset" style="display: none;">Access unavailable</div>
+	<div id="accessAvailableContainer">
+		<table style="width: 100%;" class="userList">
+			<colgroup>
+				<col class="names" style="width: 100%;">
+			</colgroup>
+			<thead>
+				<tr>
+					<th class="names" style="text-align: left;"><span class="viewIcon">View</span>Access</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="accessAvailableInset" class="sidebarInset">
+			<table style="width: 100%;" class="userList">
+				<colgroup>
+					<col class="names" style="width: 98%;">
+					<col class="view" style="width: 16px;">
+				</colgroup>
+				<tbody id="accessSidebarUsers">
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+		
+<div style="width: 264px;" id="notifySidebar" class="sidebar">
+	<div id="notifyUnavailableContainer" class="sidebarWarning sidebarInset" style="display: none;">Notify unavailable</div>
+	<div id="notifyAvailableContainer">
+		<table style="width: 100%;" class="userList">
+			<colgroup>
+				<col class="names" style="width: 100%;">
+			</colgroup>
+			<thead>
+				<tr>
+					<th class="names" style="text-align: left;"><span class="notifyIcon">Notified</span>Notify</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="notifyAvailableInset" class="sidebarInset">
+			<table style="width: 100%;" class="userList">
+				<colgroup>
+					<col class="names" style="width: 98%;">
+					<col class="notify" style="width: 16px;">
+				</colgroup>
+				<tbody id="notifySidebarUsers">
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+		<br clear="left">
+</div>
+	
+<ul style="left: 328px;" id="Toolbar">
+			<li class="actionNew"><a href="../calendar/create">New</a></li>
+										<li class="actionListView"><a href="../calendar/all/list?end_date=2008-04-30&amp;start_date=2008-04-01">List View</a></li>
+					<li class="actionToday"><a href="../home/calendar">Today</a></li>
+				<li class="actionOverlayUser"><a href="#" id="actionCalendarOverlayLink" onclick="return Drawers.toggle('CalendarOverlay');; return false;">Overlay Users</a></li>
+				<li class="actionImport"><a href="#" id="actionCalendarImportLink" onclick="$('new_calendar').value = 'New Calendar'; CalendarImportDrawer.setToExisting(); return Drawers.toggle('CalendarImport');; return false;">Import iCalendar</a></li>
+	</ul>
+	<div style="left: 328px;" id="contentPane">
+		
+<div id="Drawers">
+			<div class="drawerContent" id="drawerCalendarOverlay" style="display: none;">
+<h5 style="clear: left;">Overlaid Calendars</h5>
+<fieldset style="float: left; clear: left; width: 96%;">
+			<em>No calendars overlayed.</em>
+	</fieldset>
+<h5 style="clear: left;">Click to Overlay</h5>
+<fieldset style="float: left; clear: left; width: 96%;">
+			<ul id="" class="tagList">
+							<li><a href="../calendar/add_overlay/193733" class="tag">John Smith</a></li>
+					</ul>
+	</fieldset>
+<div class="drawerButtons" style="clear: left;">
+	<input value="Done" onclick="return Drawers.hide('CalendarOverlay');" type="button">
+</div></div>
+				<div class="drawerContent" id="drawerCalendarImport" style="display: none;">
+<h5>Import events from an iCalendar file (.ics)</h5>
+<form action="../calendar/import" class="item_editor" enctype="multipart/form-data" method="post" onsubmit="return Calendar.validateSubmitImport(this);" style="margin-bottom: 0pt;">	<fieldset>
+				<input id="icalendar" name="icalendar" style="" type="file">
+	</fieldset>
+	<h5>Add the events to:</h5>
+	<fieldset>
+		 <table>
+			 <tbody><tr>
+				<td><input id="existing_calendar_radio" onclick="return CalendarImportDrawer.setToExisting();" name="calendar_type" value="existing" checked="checked" type="radio"></td>
+				<td style="width: 100%;">An existing calendar:</td>
+			 </tr>
+			 <tr>
+				<td>&nbsp;</td>
+				 <td style="width: 100%;">
+					<select id="existing_calendar" name="existing_calendar"><optgroup><option value="209679">Jane Doe</option></optgroup></select>
+				</td>
+			</tr>
+			<tr>
+				<td><input id="new_calendar_radio" name="calendar_type" value="new" onclick="return CalendarImportDrawer.setToNew();" type="radio"></td>
+				<td style="width: 100%;">A new calendar:</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td style="width: 100%;"><input id="new_calendar" name="new_calendar" size="20" value="New Calendar" style="width: 200px;" disabled="disabled" type="text"></td>
+			</tr>
+		</tbody></table>
+	</fieldset>
+	<div class="drawerButtons">
+		<input value="Cancel" onclick="return Drawers.hide('CalendarImport');" type="button">
+		<input name="command" value="Import" type="submit">
+	</div>
+</form></div>
+			</div>
+		<div id="contentWrapper">
+			
+
+
+			 
+
+
+
+
+<div>
+	<ul class="reportBoxHeader">
+		<li>
+			<strong>All Events</strong>
+			•
+			0
+			events		</li>
+		<li class="right arrowNext">
+			<a href="../calendar/all/month?date=2008-5-01" title="Next Month">&gt;</a>
+		 </li>
+		<li class="right">
+			 <select id="paginatorSelect" onchange="window.location = '/calendar/all/month?date=jump_url_page_number'.sub('jump_url_page_number', $('paginatorSelect').value);">
+															<option value="2007-4-01">
+					April 2007
+				</option>
+															<option value="2007-5-01">
+					May 2007
+				</option>
+															<option value="2007-6-01">
+					June 2007
+				</option>
+															<option value="2007-7-01">
+					July 2007
+				</option>
+															<option value="2007-8-01">
+					August 2007
+				</option>
+															<option value="2007-9-01">
+					September 2007
+				</option>
+															<option value="2007-10-01">
+					October 2007
+				</option>
+															<option value="2007-11-01">
+					November 2007
+				</option>
+															<option value="2007-12-01">
+					December 2007
+				</option>
+															<option value="2008-1-01">
+					January 2008
+				</option>
+															<option value="2008-2-01">
+					February 2008
+				</option>
+															<option value="2008-3-01">
+					March 2008
+				</option>
+															<option selected="selected" value="2008-4-01">
+					April 2008
+				</option>
+															<option value="2008-5-01">
+					May 2008
+				</option>
+															<option value="2008-6-01">
+					June 2008
+				</option>
+															<option value="2008-7-01">
+					July 2008
+				</option>
+															<option value="2008-8-01">
+					August 2008
+				</option>
+															<option value="2008-9-01">
+					September 2008
+				</option>
+															<option value="2008-10-01">
+					October 2008
+				</option>
+															<option value="2008-11-01">
+					November 2008
+				</option>
+															<option value="2008-12-01">
+					December 2008
+				</option>
+															<option value="2009-1-01">
+					January 2009
+				</option>
+															<option value="2009-2-01">
+					February 2009
+				</option>
+															<option value="2009-3-01">
+					March 2009
+				</option>
+															<option value="2009-4-01">
+					April 2009
+				</option>
+						</select>
+		</li>
+		<li class="right arrowPrev">
+			<a href="../calendar/all/month?date=2008-3-01" title="Previous Month">&lt;</a>
+		 </li>
+	</ul>
+</div>
+
+<table id="calendarMonthView" style="border: medium none ; width: 100%; border-collapse: collapse;" class="tableList" cellspacing="0">
+	<caption>April 2008</caption>
+	<colgroup>
+		<col width="15%">
+		<col width="14%">
+		<col width="14%">
+		<col width="14%">
+		<col width="14%">
+		<col width="14%">
+		<col width="15%">
+	</colgroup>
+	<thead>
+		<tr>
+			<th class="firstCol">Sunday</th>
+			<th>Monday</th>
+			<th>Tuesday</th>
+			<th>Wednesday</th>
+			<th>Thursday</th>
+			<th>Friday</th>
+			<th>Saturday</th>
+		</tr>
+	</thead>
+	<tbody>
+					<tr>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-03-30" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-03-30&amp;start_date=2008-03-30" class="monthDay">30</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-03-31" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-03-31&amp;start_date=2008-03-31" class="monthDay">31</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-01" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-01&amp;start_date=2008-04-01" class="monthDay">1</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-02" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-02&amp;start_date=2008-04-02" class="monthDay">2</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-03" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-03&amp;start_date=2008-04-03" class="monthDay">3</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-04" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-04&amp;start_date=2008-04-04" class="monthDay">4</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-05" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-05&amp;start_date=2008-04-05" class="monthDay">5</a>
+						</div>
+																																									</td>
+							</tr>
+					<tr>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-06" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-06&amp;start_date=2008-04-06" class="monthDay">6</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-07" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-07&amp;start_date=2008-04-07" class="monthDay">7</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-08" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-08&amp;start_date=2008-04-08" class="monthDay">8</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-09" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-09&amp;start_date=2008-04-09" class="monthDay">9</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-10" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-10&amp;start_date=2008-04-10" class="monthDay">10</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-11" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-11&amp;start_date=2008-04-11" class="monthDay">11</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-12" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-12&amp;start_date=2008-04-12" class="monthDay">12</a>
+						</div>
+																																									</td>
+							</tr>
+					<tr>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-13" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-13&amp;start_date=2008-04-13" class="monthDay">13</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-14" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-14&amp;start_date=2008-04-14" class="monthDay">14</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-15" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-15&amp;start_date=2008-04-15" class="monthDay">15</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-16" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-16&amp;start_date=2008-04-16" class="monthDay">16</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-17" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-17&amp;start_date=2008-04-17" class="monthDay">17</a>
+						</div>
+																																									</td>
+														<td class="monthToday">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-18" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-18&amp;start_date=2008-04-18" class="monthDay">18</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-19" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-19&amp;start_date=2008-04-19" class="monthDay">19</a>
+						</div>
+																																									</td>
+							</tr>
+					<tr>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-20" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-20&amp;start_date=2008-04-20" class="monthDay">20</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-21" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-21&amp;start_date=2008-04-21" class="monthDay">21</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-22" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-22&amp;start_date=2008-04-22" class="monthDay">22</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-23" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-23&amp;start_date=2008-04-23" class="monthDay">23</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-24" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-24&amp;start_date=2008-04-24" class="monthDay">24</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-25" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-25&amp;start_date=2008-04-25" class="monthDay">25</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-26" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-26&amp;start_date=2008-04-26" class="monthDay">26</a>
+						</div>
+																																									</td>
+							</tr>
+					<tr>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-27" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-27&amp;start_date=2008-04-27" class="monthDay">27</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-28" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-28&amp;start_date=2008-04-28" class="monthDay">28</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-29" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-29&amp;start_date=2008-04-29" class="monthDay">29</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-04-30" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-04-30&amp;start_date=2008-04-30" class="monthDay">30</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-05-01" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-05-01&amp;start_date=2008-05-01" class="monthDay">1</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-05-02" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-05-02&amp;start_date=2008-05-02" class="monthDay">2</a>
+						</div>
+																																									</td>
+														<td class="">
+						<div class="calMonthDayHeader">
+							
+														<a href="../calendar/create?date=2008-05-03" class="addEventMonthView">+</a>
+							<a href="../calendar/all/list?end_date=2008-05-03&amp;start_date=2008-05-03" class="monthDay">3</a>
+						</div>
+																																									</td>
+							</tr>
+			</tbody>
+</table>
+		</div>
+	</div>
+	<div id="overlay" class="overlay"></div>
+	<div id="modalDialog"><div id="lbLoadMessage"></div></div>
+	<script type="text/javascript">
+	//<![CDATA[
+		Joyent.applicationName = 'calendar';
+		Joyent.groupName = 'Calendar';
+		Joyent.viewKind = 'month';
+		
+		Tag.create({ domId: 'tag_90217', arId: 90217, name: 'CSS' });
+Tag.create({ domId: 'tag_90231', arId: 90231, name: 'Design' });
+Tag.create({ domId: 'tag_90245', arId: 90245, name: 'Open%20Source' });
+		Event.observe(window, 'load', function(event){ JoyentPage.refresh(); });
+		Event.observe(window, 'load', function(event){ SidebarResizer.refresh(); });
+		$$('textarea').each(function(element){ new ResizingTextArea(element); });
+	//]]>
+	</script>
+</body></html>
